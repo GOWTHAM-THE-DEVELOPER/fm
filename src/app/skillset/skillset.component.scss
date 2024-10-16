@@ -1,0 +1,67 @@
+span {
+  color: red;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 34px;
+  color: darkblue;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  font-weight: 500;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+
+th {
+  background-color: #e6e4df;
+  padding: 10px;
+}
+
+
+.table-btn {
+  background-color: #30a3bf;
+  color: white;
+  float: right;
+
+}
+
+
+.next {
+  background-color: #8929a6;
+  color: white;
+  margin-left: 74.7rem;
+}
+
+.fa-chevron-right {
+  font-size: 13px;
+  padding: 4px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.skill-page {
+  display: flex;
+}
+.table-page {
+  width: 91vw;
+}

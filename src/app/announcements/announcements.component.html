@@ -1,0 +1,199 @@
+<div class="announcements-container">
+  <nav class="top-nav">
+    <!-- Full Width Search Bar -->
+    <div class="search-bar-container" *ngIf="isSearchActive">
+      <input type="search" class="search-input" placeholder="Search announcements" [(ngModel)]="searchTerm">
+      <button class="search-close-icon" (click)="toggleSearch()">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group" *ngIf="!isSearchActive">
+      <button class="btn-add-announcement" (click)="openAnnouncementModal()">Add Announcement</button>
+      <button class="btn-filter" (click)="toggleFilterPopup()">
+        <i class="fa fa-filter"></i>
+      </button>
+      <button class="btn-search" (click)="toggleSearch()">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Announcement Modal -->
+  <div class="modal-overlay" *ngIf="isModalOpen">
+    <div class="modal-content">
+      <button class="modal-close-button" (click)="closeAnnouncementModal()">
+        <i class="fa fa-times"></i>
+      </button>
+      <h1>Announcement</h1>
+      <form [formGroup]="announcementForm" (ngSubmit)="submitAnnouncement()">
+        <div>
+          <label for="name">Name:</label>
+          <input id="name" formControlName="name" type="text" placeholder="Enter name">
+          <div *ngIf="announcementForm.controls['name'].invalid && announcementForm.controls['name'].touched">
+            <small class="error-text">Name is required.</small>
+          </div>
+        </div>
+        <div>
+          <label for="title">Title:</label>
+          <input id="title" formControlName="title" type="text" placeholder="Enter title">
+          <div *ngIf="announcementForm.controls['title'].invalid && announcementForm.controls['title'].touched">
+            <small class="error-text">Title is required.</small>
+          </div>
+        </div>
+        <div>
+          <label for="message">Message:</label>
+          <textarea id="message" formControlName="message" placeholder="Enter message"></textarea>
+          <div *ngIf="announcementForm.controls['message'].invalid && announcementForm.controls['message'].touched">
+            <small class="error-text">Message is required.</small>
+          </div>
+        </div>
+        <div>
+          <label for="attachment">File Attachment:</label>
+          <input id="attachment" formControlName="attachment" type="file">
+        </div>
+        <div>
+          <label for="category">Category:</label>
+          <select id="category" formControlName="category">
+            <option value="">Select Category</option>
+            <option value="news">News</option>
+            <option value="updates">Updates</option>
+            <option value="alerts">Alerts</option>
+          </select>
+          <div *ngIf="announcementForm.controls['category'].invalid && announcementForm.controls['category'].touched">
+            <small class="error-text">Category is required.</small>
+          </div>
+        </div>
+        <div>
+          <label for="expiry">Expiry Date:</label>
+          <input id="expiry" formControlName="expiry" type="date">
+          <div *ngIf="announcementForm.controls['expiry'].invalid && announcementForm.controls['expiry'].touched">
+            <small class="error-text">Expiry date is required.</small>
+          </div>
+        </div>
+        <div>
+          <label for="location">Location:</label>
+          <select id="location" formControlName="location">
+            <option value="">Select Location</option>
+            <option value="hq">HQ</option>
+            <option value="branch">Branch</option>
+            <option value="remote">Remote</option>
+          </select>
+          <div *ngIf="announcementForm.controls['location'].invalid && announcementForm.controls['location'].touched">
+            <small class="error-text">Location is required.</small>
+          </div>
+        </div>
+        <div>
+          <label><input formControlName="disableComments" type="checkbox"> Disable Comments</label>
+          <label><input formControlName="pinAnnouncement" type="checkbox"> Pin Announcement</label>
+          <label><input formControlName="notifyAll" type="checkbox"> Notify All Employees</label>
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="publish-button">Publish</button>
+          <button type="button" class="cancel-button" (click)="closeAnnouncementModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</div>
+
+<!-- Filter-Popup -->
+<div class="filter-popup" *ngIf="isFilterPopupActive">
+  <div class="filter-popup-content">
+    <button class="filter-close-button" (click)="toggleFilterPopup()">
+      <i class="fa fa-times"></i>
+    </button>
+    <h2>Filter</h2>
+    <form>
+      <div>
+        <label for="filter-category">Category:</label>
+        <select id="filter-category">
+          <option value="">Select Category</option>
+          <option value="news">News</option>
+          <option value="updates">Updates</option>
+          <option value="alerts">Alerts</option>
+        </select>
+      </div>
+      <div>
+        <label for="filter-location">Location:</label>
+        <select id="filter-location">
+          <option value="">Select Location</option>
+          <option value="hq">HQ</option>
+          <option value="branch">Branch</option>
+          <option value="remote">Remote</option>
+        </select>
+      </div>
+      <div>
+        <label for="filter-status">Status:</label>
+        <select id="filter-status">
+          <option value="">Select Status</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" id="filter-pinned">
+          Pinned Announcement
+        </label>
+      </div>
+      <div class="filter-buttons">
+        <button type="button" class="apply-button" (click)="applyFilter()">Apply</button>
+        <button type="button" class="reset-button" (click)="resetFilter()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- announcement-card -->
+<div class="announcement-card" *ngFor="let announcement of announcements">
+  <div class="card-left">
+    <h2>{{ announcement.title }}</h2>
+    <p>Posted By - {{ announcement.name }}</p>
+  </div>
+  <div class="card-right">
+    <button class="like-button" *ngIf="announcement.id !== undefined" (click)="likeAnnouncement(announcement.id)">
+      <i class="fa fa-thumbs-up"></i> <!-- Like icon -->
+    </button>
+    <button class="comment-button" *ngIf="announcement.id !== undefined" (click)="openCommentModal(announcement.id)">
+      <i class="fa fa-comment"></i> <!-- Comment icon -->
+    </button>
+    <button class="delete-button" *ngIf="announcement.id !== undefined" (click)="deleteAnnouncement(announcement.id)">
+      <i class="fa fa-trash"></i> <!-- Delete icon -->
+    </button>
+    <button class="view-button" (click)="openAnnouncementPopup(announcement)">
+      View Details
+    </button>
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<div class="popup-overlay" *ngIf="isPopupOpen">
+  <div class="popup-content">
+    <button class="popup-close-button" (click)="closeAnnouncementPopup()">
+      <i class="fa fa-times"></i>
+    </button>
+    <h1>{{ selectedAnnouncement?.title }}</h1>
+    <p>Posted By - {{ selectedAnnouncement?.name }}</p>
+    <p>{{ selectedAnnouncement?.message }}</p>
+    <p>Expiry: {{ selectedAnnouncement?.expiry | date }}</p>
+    <p>Location: {{ selectedAnnouncement?.location }}</p>
+    <!-- Like and Comment section -->
+    <div class="popup-actions">
+      <button class="action-button like-btn" (click)="likeAnnouncement(selectedAnnouncement?.id)">
+        <i class="fa fa-thumbs-up"></i> 
+      </button>
+      <button class="action-button comment-btn" (click)="openCommentPopup(selectedAnnouncement?.id)">
+        <i class="fa fa-comment"></i> 
+      </button>
+    </div>
+    <!-- Comment Box -->
+    <div class="comment-section">
+      <textarea [(ngModel)]="commentText" placeholder="Add your comment here..."></textarea>
+      <button class="submit-comment-button" (click)="submitComment()">Submit</button>
+    </div>
+  </div>
+</div>
+
+

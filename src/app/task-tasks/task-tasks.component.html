@@ -1,0 +1,10 @@
+<nav class="breadcrumb">
+    <span class="breadcrumb-item" *ngIf="activeNavItem === 'tasks'">Tasks > My Task > {{ activeSubNavItem }}</span>
+    <span class="breadcrumb-item" *ngIf="activeNavItem === 'checkLists'">Tasks > Checklists > </span>
+  </nav>
+<div class="navbar">
+    <div class="nav-item" [class.active]="activeNavItem === 'tasks'" (click)="navigateTasks()">Tasks</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'checkLists'" (click)="navigateCheckLists()">Checklists</div>
+</div>
+
+<app-task-navs *ngIf="activeNavItem === 'tasks'" (subNavChange)="updateBreadcrumb($event)"></app-task-navs>

@@ -1,0 +1,78 @@
+.apply-leave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e9ecef; /* Light grey background for a soft look */
+    padding: 16px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 600px; /* Slightly narrower for a better look */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for the form card */
+    padding: 24px;
+    position: relative; /* For positioning the close icon */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: stretch; /* Make sure child elements are full-width */
+}
+
+.close-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    color: #6c757d; /* Gray color for the close icon */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 16px; /* Space between buttons */
+    margin-top: 24px;
+}
+
+button.mat-raised-button {
+    min-width: 120px;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px; /* Slightly rounded corners */
+    font-weight: 500; /* Slightly bolder text */
+}
+
+button.mat-raised-button[color="primary"] {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    border: none; /* Remove border */
+}
+
+button.mat-raised-button[color="warn"] {
+    background-color: #ff5722; /* Warning orange */
+    color: white;
+    border: none; /* Remove border */
+}
+
+mat-form-field {
+    width: 100%; /* Ensure full width for form fields */
+    margin-bottom: 16px;
+}
+
+mat-form-field .mat-form-field-label {
+    font-size: 14px;
+    color: #495057; /* Dark grey label color */
+}
+
+mat-error {
+    color: #f44336; /* Error color */
+}
+
+mat-input-element {
+    font-size: 14px;
+}
+
+input.mat-input-element {
+    border-radius: 4px; /* Match input with button styling */
+}

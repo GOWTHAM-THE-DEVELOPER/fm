@@ -1,0 +1,144 @@
+/* onleave.component.scss */
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #007bff;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #0056b3;
+      }
+    }
+
+    .current-week {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      
+      mat-form-field {
+        flex: 1;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .calendar {
+    .days {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+
+      .day {
+        background: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        max-width: 200px;
+        width: 100%;
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-label {
+          font-weight: bold;
+          margin-bottom: 5px;
+          font-size: 1.1rem;
+        }
+
+        .day-date {
+          color: #6c757d;
+          margin-bottom: 10px;
+        }
+
+        .leave-count {
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+          color: #dc3545;
+        }
+
+        .employees {
+          font-size: 0.9rem;
+          color: #343a40;
+        }
+      }
+    }
+  }
+
+  /* Extra styling for calendar and input box */
+  mat-form-field {
+    .mat-form-field-wrapper {
+      border-radius: 8px;
+    }
+
+    .mat-form-field-flex {
+      background: #ffffff;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+      background-color: #f1f3f5;
+    }
+
+    .mat-form-field-appearance-fill.mat-focused .mat-form-field-flex {
+      border-color: #007bff;
+    }
+
+    .mat-form-field-label {
+      color: #495057;
+    }
+
+    .mat-datepicker-toggle {
+      color: #007bff;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .calendar-container {
+      padding: 15px;
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .current-week {
+          width: 100%;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+      }
+
+      .calendar {
+        .days {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

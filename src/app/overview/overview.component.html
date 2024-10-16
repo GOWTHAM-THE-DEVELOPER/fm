@@ -1,0 +1,127 @@
+<div class="head-image">
+<img  src="../../assets/images/earth12.jpg">
+</div>
+<div class="overview-page">
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <div
+          class="card-body d-flex justify-content-center align-items-center"
+          style="height: 9rem"
+        >
+          <span class="profile-set">
+            <i class="fa-solid fa-user profile"></i>
+          </span>
+        </div>
+        <div class="profile-detail">
+          <h5>1 - Arul</h5>
+          <h5>CEO</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <div class="d-flex tabs">
+              <ul class="custom-list">
+                <li
+                  (click)="aditionalClick('activities')"
+                  [ngClass]="{ active: selectedTab === 'activities' }"
+                >
+                  Activities
+                </li>
+                <li
+                  (click)="aditionalClick('feeds')"
+                  [ngClass]="{ active: selectedTab === 'feeds' }"
+                >
+                  Feeds
+                </li>
+                <li
+                  (click)="aditionalClick('profile')"
+                  [ngClass]="{ active: selectedTab === 'profile' }"
+                >
+                  Profile
+                </li>
+                <li
+                  (click)="aditionalClick('approvals')"
+                  [ngClass]="{ active: selectedTab === 'approvals' }"
+                >
+                  Approvals
+                </li>
+                <li
+                  (click)="aditionalClick('leave')"
+                  [ngClass]="{ active: selectedTab === 'leave' }"
+                >
+                  Leave
+                </li>
+                <li
+                  (click)="aditionalClick('shift')"
+                  [ngClass]="{ active: selectedTab === 'shift' }"
+                >
+                  Shift
+                </li>
+                <li
+                  (click)="aditionalClick('files')"
+                  [ngClass]="{ active: selectedTab === 'files' }"
+                >
+                  Files
+                </li>
+                <li
+                  (click)="aditionalClick('more')"
+                  [ngClass]="{ active: selectedTab === 'more' }"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="More"
+                >
+                  <i class="fa-solid fa-ellipsis"></i>
+                </li>
+                <li
+                  (click)="aditionalClick('custom-tabs')"
+                  [ngClass]="{ active: selectedTab === 'custom-tabs' }"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Customize"
+                >
+                  <i class="fa-solid fa-outdent" ></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mt-4">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Department Members</h5>
+          <p>No Data Found</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="card card-items" style="margin-top: -5rem">
+        <div class="card-body " *ngIf="selectedTab === 'activities'">
+          <h5 class="card-title">Good Morning</h5>
+          <p>Arul</p>
+          <p>Have a productive day!</p>
+          <p>
+            "If you want to make a permanent change, stop focusing on the size
+            of your problems and start focusing on the size of you!" - T. Harv
+            Eker
+          </p>
+        </div>
+        <app-feeds class="card-body" *ngIf="selectedTab === 'feeds'"></app-feeds>
+        <div class="card-body" *ngIf="selectedTab === 'profile'">2</div>
+        <div class="card-body" *ngIf="selectedTab === 'approvals'">3</div>
+        <div class="card-body" *ngIf="selectedTab === 'leave'">4</div>
+        <div class="card-body" *ngIf="selectedTab === 'shift'">5</div>
+        <div class="card-body" *ngIf="selectedTab === 'files'">6</div>
+      </div>
+    </div>
+  </div>
+</div>

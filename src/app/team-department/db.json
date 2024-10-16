@@ -1,0 +1,39 @@
+{
+  "sections": [
+    {
+      "id": "1",
+      "name": "Ceo",
+      "details": "CEO details here"
+    },
+    {
+      "id": "2",
+      "name": "Manager",
+      "details": "Manager details here"
+    },
+    {
+      "id": "3",
+      "name": "Hr",
+      "details": "HR details here"
+    },
+    {
+      "id": "4",
+      "name": "Team Leader",
+      "details": "Team Leader details here"
+    },
+    {
+      "id": "5",
+      "name": "Full Stack",
+      "details": "Full Stack details here"
+    },
+    {
+      "id": "6",
+      "name": "Angular",
+      "details": "Angular details here"
+    },
+    {
+      "id": "7",
+      "name": "Java",
+      "details": "Java details here"
+    }
+  ]
+}

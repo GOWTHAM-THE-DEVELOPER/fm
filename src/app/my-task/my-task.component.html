@@ -1,0 +1,156 @@
+<!-- Button Container -->
+<div class="button-container">
+  <div class="status-buttons">
+    <button mat-button (click)="filterTasks('Total')">Total</button>
+    <button mat-button (click)="filterTasks('Completed')">Completed</button>
+    <button mat-button (click)="filterTasks('In Progress')">In Progress</button>
+    <button mat-button (click)="filterTasks('Not Started')">Not Started</button>
+  </div>
+
+  <div class="action-buttons">
+    <button mat-raised-button color="primary" (click)="openModal()">Add Task</button>
+    <button mat-icon-button (click)="toggleFilterPopup()" matTooltip="Filter Tasks">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+<!-- Filter Popup -->
+<div class="filter-popup" *ngIf="showFilterPopup">
+  <div class="filter-popup-content">
+    <button class="close-button" (click)="toggleFilterPopup()">
+      <i class="fas fa-times"></i>
+    </button>
+    <h2>Filter</h2>
+    <form (ngSubmit)="applyFilters()" #filterForm="ngForm">
+      <div class="form-group">
+        <div class="input-container">
+          <input placeholder="Task name" type="text" id="taskName" name="taskName" ngModel [(ngModel)]="filterCriteria.taskName">
+          <i class="fas fa-search"></i>
+        </div>               
+      </div>
+      <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority" ngModel [(ngModel)]="filterCriteria.priority">
+          <option value="">Select Priority</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" name="status" ngModel [(ngModel)]="filterCriteria.status">
+          <option value="">Select Status</option>
+          <option value="Completed">Completed</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Not Started">Not Started</option>
+        </select>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">Apply</button>
+        <button type="button" (click)="resetFilters()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Task Table -->
+<div class="task-content" *ngIf="filteredTasks.length > 0">
+  <h3 class="table-head">Task Details</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Task Owner</th>
+        <th>Task Name</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>Due Date</th>
+        <th>Reminder</th> 
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of filteredTasks">
+        <td>{{ task.taskOwner }}</td>
+        <td>{{ task.taskName }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.startDate }}</td>
+        <td>{{ task.dueDate }}</td>
+        <td>{{ task.reminder }}</td>
+        <td [ngClass]="getPriorityClass(task.priority)">{{ task.priority }}</td>
+        <td [ngClass]="getStatusClass(task.status)">{{ task.status }}</td>
+        <td>
+          <button class="icon-button edit-button" (click)="editTask(task)">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="icon-button delete-button" (click)="deleteTask(task.id)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- No tasks message -->
+<div class="no-tasks" *ngIf="filteredTasks.length === 0 && !showFilterPopup">
+  No tasks to display.
+</div>
+
+<!-- Modal for Add/Edit Task -->
+<div class="modal" *ngIf="isModalOpen">
+    <div class="modal-content">
+      <span class="close-button" (click)="closeModal()">&times;</span>
+      <h2>{{ editingTask ? 'Edit Task' : 'Add Task' }}</h2>
+      <form [formGroup]="taskForm" (ngSubmit)="submitForm()">
+        <label for="taskOwner">Task Owner</label>
+        <input type="text" id="taskOwner" formControlName="taskOwner" [ngClass]="{'invalid': taskForm.get('taskOwner')?.invalid && taskForm.get('taskOwner')?.touched}" required>
+        <div class="error" *ngIf="taskForm.get('taskOwner')?.invalid && taskForm.get('taskOwner')?.touched">Task Owner is required.</div>
+  
+        <label for="taskName">Task Name</label>
+        <input type="text" id="taskName" formControlName="taskName" [ngClass]="{'invalid': taskForm.get('taskName')?.invalid && taskForm.get('taskName')?.touched}" required>
+        <div class="error" *ngIf="taskForm.get('taskName')?.invalid && taskForm.get('taskName')?.touched">Task Name is required.</div>
+  
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" [ngClass]="{'invalid': taskForm.get('description')?.invalid && taskForm.get('description')?.touched}" required></textarea>
+        <div class="error" *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched">Description is required.</div>
+  
+        <label for="startDate">Start Date</label>
+        <input type="date" id="startDate" formControlName="startDate" [attr.min]="minDate" [ngClass]="{'invalid': taskForm.get('startDate')?.invalid && taskForm.get('startDate')?.touched}" required>
+        <div class="error" *ngIf="taskForm.get('startDate')?.invalid && taskForm.get('startDate')?.touched">Start Date is required and must be today or later.</div>
+  
+        <label for="dueDate">Due Date</label>
+        <input type="date" id="dueDate" formControlName="dueDate" [attr.min]="minDate" [ngClass]="{'invalid': taskForm.get('dueDate')?.invalid && taskForm.get('dueDate')?.touched}" required>
+        <div class="error" *ngIf="taskForm.get('dueDate')?.invalid && taskForm.get('dueDate')?.touched">Due Date is required and must be today or later.</div>
+  
+        <label for="reminder">Reminder</label>
+        <input type="date" id="reminder" formControlName="reminder" [attr.min]="minDate" [ngClass]="{'invalid': taskForm.get('reminder')?.invalid && taskForm.get('reminder')?.touched}" required>
+        <div class="error" *ngIf="taskForm.get('reminder')?.invalid && taskForm.get('reminder')?.touched">Reminder Date is required and must be today or later.</div>
+        
+  
+        <label for="priority">Priority</label>
+        <select id="priority" formControlName="priority" [ngClass]="{'invalid': taskForm.get('priority')?.invalid && taskForm.get('priority')?.touched}" required>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <div class="error" *ngIf="taskForm.get('priority')?.invalid && taskForm.get('priority')?.touched">Priority is required.</div>
+  
+        <label for="status">Status</label>
+        <select id="status" formControlName="status" [ngClass]="{'invalid': taskForm.get('status')?.invalid && taskForm.get('status')?.touched}" required>
+          <option value="Not Started">Not Started</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <div class="error" *ngIf="taskForm.get('status')?.invalid && taskForm.get('status')?.touched">Status is required.</div>
+  
+        <button type="submit">{{ editingTask ? 'Update' : 'Submit' }}</button>
+        <button type="button" (click)="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,155 @@
+
+// .body {
+//   font-family: Arial, sans-serif;
+//   background-color: #f0f2f5;
+//   margin: 0;
+//   padding: 0;
+//   height: 100vh;
+//   overflow-y: auto;
+// }
+// .container {
+//   width: 90%;
+//   margin: 20px auto;
+//   background-color: #fff;
+//   border-radius: 8px;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//   padding: 20px;
+// }
+// .header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin-bottom: 20px;
+// }
+// .header select {
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   font-size: 16px;
+// }
+// .header button {
+//   padding: 10px 20px;
+//   background-color: #007bff;
+//   color: #fff;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   font-size: 16px;
+// }
+// .header button:hover {
+//   background-color: #0056b3;
+// }
+// table {
+//   width: 100%;
+//   border-collapse: collapse;
+// }
+// th, td {
+//   padding: 12px;
+//   text-align: left;
+//   border-bottom: 1px solid #ddd;
+// }
+// th {
+//   background-color: #f0f2f5;
+//   color: #333;
+// }
+// th i {
+//   margin-left: 5px;
+//   cursor: pointer;
+// }
+// tr:hover {
+//   background-color: #f1f1f1;
+// }
+// .checkbox {
+//   text-align: center;
+// }
+
+
+
+// Global Styles
+* {
+  box-sizing: border-box; // Ensure consistent sizing
+}
+
+body {
+  font-family: Arial, sans-serif; // Set a base font
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9; // Light background for the body
+  color: #333; // Dark text color
+}
+
+// Body Container
+.body {
+  display: flex;
+  flex-direction: column; // Stack children vertically
+  height: 100vh; // Full height of the viewport
+  overflow: hidden; // Prevent overflow of body
+}
+
+// Main Content Area
+.container {
+  flex: 1; // Take up all available space
+  overflow-y: auto; // Enable vertical scrolling
+  padding: 20px; // Padding around the content
+  background-color: #fff; // White background for the content area
+  border-radius: 8px; // Rounded corners for the content area
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+}
+
+// Scrollbar Styles for Container
+.container::-webkit-scrollbar {
+  width: 10px; // Width of the scrollbar
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #007bff; // Color of the scrollbar thumb
+  border-radius: 5px; // Rounded edges for the thumb
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3; // Darker on hover
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .body {
+    padding: 10px; // Reduce padding on smaller screens
+  }
+
+  .container {
+    padding: 10px; // Adjust padding for the container
+  }
+}
+
+// Header Styles
+h1 {
+  font-size: 24px;
+  margin: 0 0 20px; // Margin for spacing below the header
+  color: #007bff; // Primary color for headers
+}
+
+// Paragraphs and Text
+p {
+  line-height: 1.6; // Improve readability with line height
+}
+
+// Button Styles (for consistency across the body)
+.btn {
+  border-radius: 4px; // Rounded button edges
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+// Primary Button Style
+.btn-primary {
+  background-color: #007bff; // Primary color
+  color: white;
+  border: none;
+}
+
+// Button Hover Effects
+.btn-primary:hover {
+  background-color: #0056b3; // Darker shade on hover
+  transform: scale(1.05); // Slight zoom on hover
+}

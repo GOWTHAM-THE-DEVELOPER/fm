@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h3>New Hires</h3>
+  </div>
+  <div class="card-content" [ngClass]="{ 'expanded': isContentVisible }">
+    <div class="card-body">
+      <ul *ngIf="employees.length; else noNewHires">
+        <li *ngFor="let employee of employees">
+          <p><strong>{{employee.employeeName}}</strong></p>
+          <p>Joined on: {{employee.joinDate | date:'longDate'}}</p>
+          <button (click)="viewEmployeeDetails(employee.employeeId)">
+            View Details
+            <span class="eye-icon">&#128065;</span> <!-- Eye icon for details -->
+          </button>
+        </li>
+      </ul>
+      <ng-template #noNewHires>
+        <p>No new joiners in past 15 days.</p>
+      </ng-template>
+    </div>
+  </div>
+  <div class="card-footer" (click)="toggleContent()">
+    <span>{{ isContentVisible ? 'Show Less' : 'Show More' }}</span>
+  </div>
+</div>

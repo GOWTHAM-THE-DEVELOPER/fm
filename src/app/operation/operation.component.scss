@@ -1,0 +1,235 @@
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+     color: #f1f1f1;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    font-weight: 600;
+  }
+  
+  .card-body h5 {
+    font-weight: bold;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 15px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .list-group-item img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  input[type="text"] {
+    border-radius: 30px;
+    padding-left: 20px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .input-group {
+    border-radius: 20px; 
+    overflow: hidden;   
+    background-color: #f8f9fa; 
+  }
+  
+  .input-group-text {
+    background-color: transparent; 
+    border: none;                  
+  }
+  
+  .input-group-text i {
+    color: #6c757d; 
+    padding-left: 1rem;
+  }
+  
+  input.form-control {
+    border: none;              
+    box-shadow: none;          
+    background-color: #f8f9fa; 
+  }
+  
+  input.form-control::placeholder {
+    color: #6c757d;
+  }
+  
+  
+
+  .icon-wrapper {
+    background-color: #e9ecef; 
+    border-radius: 50%;     
+    width: 60px;             
+    height: 60px;        
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-wrapper i {
+    font-size: 40px; 
+    color: #6c757d;   
+  }
+  
+  .card {
+    border-radius: 10px; 
+    cursor: pointer;
+  }
+  
+  h5.card-title {
+    font-weight: bold;
+  }
+  
+  i.fa-solid {
+    font-size: 24px; 
+    // color: #6c757d;  
+  }
+  
+
+  .explore-link {
+    color: blue;
+    display: none; 
+    font-size: 14px;
+  }
+  
+  .list-group-item:hover .explore-link {
+    display: block;  
+  }
+  
+  .list-group-item {
+    position: relative;
+  }
+  
+  a.list-group-item-action {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .bg{
+    cursor: pointer;
+  }
+
+  /* Icon Box Styling */
+/* Custom Background Colors */
+.bg-leave-tracker {
+ color: #46abd0 !important; /* DodgerBlue */
+ background-color:rgb(100 213 253 / 20%) ;
+}
+
+.bg-files {
+  color: #46acd0 !important; /* LightSeaGreen */
+  background-color:rgb(100 213 253 / 20%) ;
+}
+
+.bg-employee-info {
+  color: #f6ac0b !important; /* LimeGreen */
+  background-color:rgb(246 172 11 / 20%) ;
+}
+
+.bg-travel {
+color: #46acd0 !important; /* DarkOrange */
+background-color:rgb(100 213 253 / 20%) ;
+}
+
+.bg-tasks {
+  color: #e87347 !important; /* OrangeRed */
+  background-color:rgb(232 115 71 / 20%) ;
+}
+
+.bg-hr-letters {
+  color: #e87347 !important; /* SlateBlue */
+  background-color:rgb(232 115 71 / 20%) ;
+}
+
+.bg-general {
+  color: #f6ac0b !important; /* Brown */
+  background-color:rgb(246 172 11 / 20%) ;
+}
+
+.bg-approvals {
+  color: #f6ac0b !important; /* DarkTurquoise */
+  background-color:rgb(246 172 11 / 20%) ;
+}
+
+.bg-data-admin {
+  color: #cb3888 !important; /* SteelBlue */
+  background-color:rgb(203 56 136 / 20%) ;
+}
+
+/* Keep the existing icon-box styling */
+.icon-box {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 21%;
+  margin: 0 auto -1px auto;
+  color: white;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+/* Common styles */
+.list-group-item {
+  border-radius: 8px;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item i {
+  font-size: 20px;
+}
+
+/* Different background and icon colors */
+.leave-item {
+  background-color: #f8f9fa; /* Light grey background */
+}
+
+.leave-item i {
+  color: #ff5733; /* Orange icon color */
+}
+
+
+
+.files-item i {
+  color: #00796b; /* Teal icon color */
+}
+
+
+
+.employee-item i {
+  color: #d81b60; /* Dark pink icon color */
+}
+
+
+
+.travel-item i {
+  color: #ff9800; /* Orange icon color */
+}
+
+
+
+.tasks-item i {
+  color: #388e3c; /* Dark green icon color */
+}
+
+/* Hover effects */
+

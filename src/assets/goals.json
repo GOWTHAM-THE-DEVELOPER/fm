@@ -1,0 +1,283 @@
+{
+  "Goals": [
+    {
+      "name": "qweeweret",
+      "description": "ewrerrrefrrerrer",
+      "priority": "Medium",
+      "startDate": "2024-08-19T18:30:00.000Z",
+      "endDate": "2024-08-28T18:30:00.000Z",
+      "progress": 23,
+      "id": "1"
+    }
+  ],
+  "comments": [
+    {
+      "id": "9641",
+      "text": "hi",
+      "author": "Current User",
+      "authorType": "user",
+      "createdAt": "2024-08-14T07:15:53.041Z"
+    },
+    {
+      "id": "5333",
+      "text": "ok",
+      "author": "Current User",
+      "authorType": "manager",
+      "createdAt": "2024-08-14T07:17:05.947Z"
+    },
+    {
+      "id": "2385",
+      "text": "but i need apprasil",
+      "author": "Current User",
+      "authorType": "user",
+      "createdAt": "2024-08-14T07:21:07.518Z"
+    },
+    {
+      "id": "7623",
+      "text": "what is your performance",
+      "author": "Current User",
+      "authorType": "manager",
+      "createdAt": "2024-08-14T07:21:27.543Z"
+    }
+  ],
+  "Teams": [],
+  "employees": [
+    {
+      "id": "1",
+      "employeeName": "John Doe",
+      "dob": "1990-10-01",
+      "image": "https://example.com/images/john.jpg",
+      "department": "Engineering"
+    },
+    {
+      "id": "2",
+      "employeeName": "Jane Smith",
+      "dob": "1985-05-12",
+      "image": "https://example.com/images/jane.jpg",
+      "department": "Marketing"
+    },
+    {
+      "id": "3",
+      "employeeName": "Bob Johnson",
+      "dob": "1988-10-01",
+      "image": "https://example.com/images/bob.jpg",
+      "department": "Sales"
+    },
+    {
+      "id": "4",
+      "employeeName": "Alice Brown",
+      "dob": "1992-07-19",
+      "image": "https://example.com/images/alice.jpg",
+      "department": "HR"
+    }
+  ],
+  "Leave": [
+    {
+      "id": "f47b",
+      "leaveType": "Casual Leave",
+      "startDate": "2024-10-16T18:30:00.000Z",
+      "endDate": "2024-10-17T18:30:00.000Z",
+      "teamEmail": "siva@gmail.com",
+      "reason": "summa"
+    },
+    {
+      "id": "5233",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Casual Leave",
+      "type": "Paid",
+      "leavePeriod": "Thu Oct 17 2024 - Fri Oct 18 2024",
+      "daysTaken": 2,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "a91c",
+      "leaveType": "Leave Without Pay",
+      "startDate": "2024-10-15T18:30:00.000Z",
+      "endDate": "2024-10-10T18:30:00.000Z",
+      "teamEmail": "gowtham@gmail.com",
+      "reason": "h"
+    },
+    {
+      "id": "16a8",
+      "leaveType": "Casual Leave",
+      "startDate": "2024-10-07T18:30:00.000Z",
+      "endDate": "2024-10-14T18:30:00.000Z",
+      "teamEmail": "Gousen@gail.com",
+      "reason": "gbbg"
+    },
+    {
+      "id": "af30",
+      "leaveType": "Earned Leave",
+      "startDate": "2024-10-13T18:30:00.000Z",
+      "endDate": "2024-10-16T18:30:00.000Z",
+      "teamEmail": "gosen@gmail.com",
+      "reason": "yes"
+    },
+    {
+      "id": "9cda",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Earned Leave",
+      "type": "Paid",
+      "leavePeriod": "Mon Oct 14 2024 - Thu Oct 17 2024",
+      "daysTaken": 4,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "85f8",
+      "leaveType": "Sabbatical Leave",
+      "startDate": "2024-10-14T18:30:00.000Z",
+      "endDate": "2024-10-25T18:30:00.000Z",
+      "teamEmail": "sen@gmail.com",
+      "reason": "test"
+    },
+    {
+      "id": "27bb",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Sabbatical Leave",
+      "type": "Paid",
+      "leavePeriod": "Tue Oct 15 2024 - Sat Oct 26 2024",
+      "daysTaken": 12,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "3111",
+      "leaveType": "Sabbatical Leave",
+      "startDate": "2024-10-15T18:30:00.000Z",
+      "endDate": "2024-10-14T18:30:00.000Z",
+      "teamEmail": "gou@gmail.com",
+      "reason": "leave"
+    },
+    {
+      "id": "4cf2",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Sabbatical Leave",
+      "type": "Paid",
+      "leavePeriod": "Wed Oct 16 2024 - Tue Oct 15 2024",
+      "daysTaken": 0,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "9af5",
+      "leaveType": "Sabbatical Leave",
+      "startDate": "2025-01-15T18:30:00.000Z",
+      "endDate": "2024-10-07T18:30:00.000Z",
+      "teamEmail": "fcfvg@gmail.com",
+      "reason": "test"
+    },
+    {
+      "id": "e69d",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Sabbatical Leave",
+      "type": "Paid",
+      "leavePeriod": "Thu Jan 16 2025 - Tue Oct 08 2024",
+      "daysTaken": -99,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "be00",
+      "leaveType": "Earned Leave",
+      "startDate": "2024-10-30T18:30:00.000Z",
+      "endDate": "2024-11-07T18:30:00.000Z",
+      "teamEmail": "testing@gmail.com",
+      "reason": "test"
+    },
+    {
+      "id": "3538",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Earned Leave",
+      "type": "Paid",
+      "leavePeriod": "Thu Oct 31 2024 - Fri Nov 08 2024",
+      "daysTaken": 9,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "5b73",
+      "leaveType": "Sabbatical Leave",
+      "startDate": "2024-10-30T18:30:00.000Z",
+      "endDate": "2025-01-15T18:30:00.000Z",
+      "teamEmail": "test@gmail.com",
+      "reason": "test"
+    },
+    {
+      "id": "8191",
+      "employeeName": "Sivaneshwaran",
+      "leaveType": "Sabbatical Leave",
+      "type": "Paid",
+      "leavePeriod": "Thu Oct 31 2024 - Thu Jan 16 2025",
+      "daysTaken": 78,
+      "dateOfRequest": "Mon Oct 14 2024",
+      "selected": false
+    },
+    {
+      "id": "a94d",
+      "leaveType": "Leave Without Pay",
+      "startDate": "2024-10-14T18:30:00.000Z",
+      "endDate": "2024-10-16T18:30:00.000Z",
+      "teamEmail": "e@gmai.ocm",
+      "reason": "tsrd"
+    },
+    {
+      "id": "a0f4",
+      "leaveType": "Leave Without Pay",
+      "days": 3
+    }
+  ],
+  "NewHires": [],
+  "leaveRequests": [],
+  "LeaveSummary": [
+    {
+      "typeLeave": "Casual Leave",
+      "icon": "fas fa-sun",
+      "color": "#a3c4f3",
+      "available": 12,
+      "booked": 0,
+      "id": "0848"
+    },
+    {
+      "typeLeave": "Earned Leave",
+      "icon": "fas fa-clock",
+      "color": "#a3d39c",
+      "available": 12,
+      "booked": 0,
+      "id": "5118"
+    },
+    {
+      "typeLeave": "Leave Without Pay",
+      "icon": "fas fa-sun",
+      "color": "#f3a3a3",
+      "available": 12,
+      "booked": 0,
+      "id": "aaa1"
+    },
+    {
+      "typeLeave": "Paternity Leave",
+      "icon": "fas fa-user",
+      "color": "#f3a3a3",
+      "available": 5,
+      "booked": 0,
+      "id": "1ac5"
+    },
+    {
+      "typeLeave": "Sabbatical Leave",
+      "icon": "fas fa-sync-alt",
+      "color": "#f3e3a3",
+      "available": 5,
+      "booked": 1,
+      "id": "69e4"
+    },
+    {
+      "typeLeave": "Sick Leave",
+      "icon": "fas fa-square",
+      "color": "#bde0fe",
+      "available": 5,
+      "booked": 1,
+      "id": "6365"
+    }
+  ]
+}

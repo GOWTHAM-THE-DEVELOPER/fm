@@ -1,0 +1,56 @@
+<div class="team-space-container">
+    <div class="team-overview">
+        <div class="card">
+            <h3>Management</h3>
+            <p>Team strength: {{ team.teamStrength }}</p>
+        </div>
+        <div class="card">
+            <h3>Team Availability</h3>
+            <p>Yet to check-in: {{ team.teamAvailability.yetToCheckIn }}</p>
+            <p>Leave: {{ team.teamAvailability.onLeave }}</p>
+        </div>
+        <div class="card">
+            <h3>Location Diversity</h3>
+            <p>Unspecified location: {{ team.teamStrength }}</p>
+        </div>
+    </div>
+    <div class="team-details">
+        <div class="department-wall">
+            <h3>Department Wall</h3>
+            <div class="messages">
+              <div *ngFor="let message of messages" class="message">
+                <div class="message-header">
+                  <strong>{{ message.sender }}</strong> <span>{{ message.timestamp | date:'short' }}</span>
+                </div>
+                <div class="message-body">
+                  {{ message.text }}
+                </div>
+              </div>
+            </div>
+            <textarea placeholder="Post a message to your department" [(ngModel)]="newMessage"></textarea>
+            <button (click)="postMessage()">Post</button>
+          </div>
+          
+        <div class="right-pane">
+            <div class="card">
+                <h3>Work Anniversary</h3>
+                <p *ngFor="let anniversary of team.workAnniversaries">{{ anniversary }}</p>
+            </div>
+            <div class="card">
+                <h3>New Hires</h3>
+                <p *ngFor="let hire of team.newHires">{{ hire }}</p>
+            </div>
+            <div class="card">
+                <h3>Birthday Buddy</h3>
+                <p *ngFor="let buddy of team.birthdayBuddies">{{ buddy }}</p>
+            </div>
+            <div class="card scrollable-card">
+                <h3>Department Files</h3>
+                <div class="scrollable-content">
+                    <p *ngFor="let file of team.departmentFiles">{{ file }}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

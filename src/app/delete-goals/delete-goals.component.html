@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirm Deletion</h1>
+<div mat-dialog-content>
+  <p>Are you sure you want to delete the goal "{{ data.name }}"?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="warn" (click)="onConfirm()">Delete</button>
+</div>

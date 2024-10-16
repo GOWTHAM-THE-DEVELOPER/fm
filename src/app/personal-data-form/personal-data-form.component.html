@@ -1,0 +1,1095 @@
+
+<form [formGroup]="personalDataForm" (ngSubmit)="onSubmit()" class="personal-data-page">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': activeTab === 'personal-data'}" (click)="setActiveTab('personal-data')" role="tab">Personal Data</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [ngClass]="{'active': activeTab === 'home-mailing-addresses'}" (click)="setActiveTab('home-mailing-addresses')" role="tab">Home Mailing Addresses</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{'active': activeTab === 'emergency-contact'}" (click)="setActiveTab('emergency-contact')" role="tab">Emergency Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{'active': activeTab === 'passport-and-visa-details'}" (click)="setActiveTab('passport-and-visa-details')" role="tab">Passport and Visa Details</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'health-data'}" (click)="setActiveTab('health-data')" role="tab">Health Data</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'education'}" (click)="setActiveTab('education')" role="tab">Education</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'languages-known'}" (click)="setActiveTab('languages-known')" role="tab">Languages Known</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'training-certification'}" (click)="setActiveTab('training-certification')" role="tab">Training Certification</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'membership-of-professional-institute'}" (click)="setActiveTab('membership-of-professional-institute')" role="tab">Membership of Professional Institute</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'extra-curricular-activity'}" (click)="setActiveTab('extra-curricular-activity')" role="tab">Extra Curricular Activity</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'skills-summary'}" (click)="setActiveTab('skills-summary')" role="tab">Skills Summary</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'work-experience'}" (click)="setActiveTab('work-experience')" role="tab">Work Experience</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'general-data'}" (click)="setActiveTab('general-data')" role="tab">General Data</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" [ngClass]="{'active': activeTab === 'declaration'}" (click)="setActiveTab('declaration')" role="tab">Declaration</a>
+</li>
+
+    <!-- Add more tabs here -->
+</ul>
+  <!-- Existing fields -->
+  <div class="form-group">
+      <label for="postAppliedFor">Post Applied For</label>
+      <input id="postAppliedFor" formControlName="postAppliedFor" class="form-control" />
+  </div>
+  <div class="tab-content mt-3">
+    <div *ngIf="activeTab === 'personal-data'" class="tab-pane active">
+  <h3>Personal Data</h3>
+  <fieldset class=" p-2">
+      <div class="container">
+          <!-- Row 1: First Name, Middle Name, Last Name -->
+          <div class="row mb-2">
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="firstName">First Name</label>
+                      <input class="form-control" id="firstName" formControlName="firstName" placeholder="Enter first name" />
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="middleName">Middle Name</label>
+                      <input class="form-control" id="middleName" formControlName="middleName" placeholder="Enter middle name" />
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input class="form-control" id="lastName" formControlName="lastName" placeholder="Enter last name" />
+                  </div>
+              </div>
+          </div>
+
+          <!-- Row 2: Email, Birth Date -->
+          <div class="row mb-2">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input class="form-control" id="email" formControlName="email" placeholder="Enter email" type="email" />
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="birthDate">Birth Date</label>
+                      <input class="form-control" id="birthDate" formControlName="birthDate" type="date" />
+                  </div>
+              </div>
+          </div>
+
+          <!-- Row 3: Birth Place, Gender, Age -->
+          <div class="row mb-2">
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="birthPlace">Birth Place</label>
+                      <input class="form-control" id="birthPlace" formControlName="birthPlace" placeholder="Enter birth place" />
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                    <label for="category">Gender</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="general" formControlName="category" value="General" class="form-check-input" />
+                            <label for="general" class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="obc" formControlName="category" value="OBC" class="form-check-input" />
+                            <label for="obc" class="form-check-label">Female</label>
+                        </div>
+                        <!-- Repeat for other categories -->
+                    </div>
+                </div>
+            </div>
+
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="age">Age</label>
+                      <input class="form-control" id="age" formControlName="age" placeholder="Enter age" type="number" />
+                  </div>
+              </div>
+          </div>
+
+          <!-- Row 4: Marital Status, Marriage Date, Native State -->
+          <div class="row mb-2">
+            <div class="col-md-4">
+              <div class="form-group">
+                  <label for="category">Marital Status</label>
+                  <div>
+                      <div class="form-check form-check-inline">
+                          <input type="radio" id="general" formControlName="category" value="General" class="form-check-input" />
+                          <label for="general" class="form-check-label">Single</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                          <input type="radio" id="obc" formControlName="category" value="OBC" class="form-check-input" />
+                          <label for="obc" class="form-check-label">Married</label>
+                      </div>
+                      <!-- Repeat for other categories -->
+                  </div>
+              </div>
+          </div>
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="marriageDate">Marriage Date</label>
+                      <input class="form-control" id="marriageDate" formControlName="marriageDate" type="date" />
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group">
+                      <label for="nativeState">Native State</label>
+                      <input class="form-control" id="nativeState" formControlName="nativeState" placeholder="Enter native state" />
+                  </div>
+              </div>
+          </div>
+
+          <!-- Row 5: Religion, Nationality -->
+          <div class="row mb-2">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="religion">Religion</label>
+                      <input class="form-control" id="religion" formControlName="religion" placeholder="Enter religion" />
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="nationality">Nationality</label>
+                      <input class="form-control" id="nationality" formControlName="nationality" placeholder="Enter nationality" />
+                  </div>
+              </div>
+          </div>
+
+          <!-- Row 6: State of Domicile, Category -->
+          <div class="row mb-2">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="stateOfDomicile">State of Domicile</label>
+                      <input class="form-control" id="stateOfDomicile" formControlName="stateOfDomicile" placeholder="Enter state of domicile" />
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="category">Category</label>
+                      <div>
+                          <div class="form-check form-check-inline">
+                              <input type="radio" id="general" formControlName="category" value="General" class="form-check-input" />
+                              <label for="general" class="form-check-label">General</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                              <input type="radio" id="obc" formControlName="category" value="OBC" class="form-check-input" />
+                              <label for="obc" class="form-check-label">OBC</label>
+                          </div>
+                          <!-- Repeat for other categories -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Row 7: Family Member Name, Relationship -->
+          <fieldset class=" p-2">
+              <div formArrayName="familyDetails" class="form-group">
+                  <div *ngFor="let familyMember of familyDetails.controls; let i = index;" [formGroupName]="i" class=" p-2 mb-2">
+                      <div class="row mb-2">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="familyDetailsfamilyMemberName">Family Member Name</label>
+                                  <input class="form-control" id="familyDetailsfamilyMemberName" formControlName="name" placeholder="Enter family member's name" />
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="familyDetailsfamilyMemberRelation">Relationship</label>
+                                  <input class="form-control" id="familyDetailsfamilyMemberRelation" formControlName="relationship" placeholder="Enter relationship" />
+                              </div>
+                          </div>
+                      </div>
+                      <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary me-2" (click)="removeFamilyMember(i)">Remove</button>
+                        <button type="button" class="btn btn-primary" (click)="addFamilyMember()">Add Family Member</button>
+                    </div>
+                </div>
+              </div>
+          </fieldset>
+      </div>
+  </fieldset>
+  </div>
+  <div *ngIf="activeTab === 'home-mailing-addresses'" class="tab-pane  active">
+    <h3>Home Mailing Addresses</h3>
+    <fieldset class=" p-3 mb-3">
+        <h5>Present Home Mailing Address</h5>
+        <div formGroupName="presentHomeMailingAddress">
+            <div class="form-group">
+                <label for="presentAddress">Address:</label>
+                <input class="form-control" id="presentAddress" formControlName="address" placeholder="Address" maxlength="80">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="presentPinCode">Pin Code:</label>
+                    <input class="form-control" id="presentPinCode" formControlName="pinCode" type="number" placeholder="Pin Code" maxlength="6">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="presentCell">Cell:</label>
+                    <input class="form-control" id="presentCell" formControlName="cell" type="number" placeholder="Cell" maxlength="10">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="presentTelephoneCode">Telephone Code:</label>
+                    <input class="form-control" id="presentTelephoneCode" formControlName="telephoneCode" type="number" placeholder="Telephone Code" maxlength="3">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="presentTelephone">Telephone:</label>
+                    <input class="form-control" id="presentTelephone" formControlName="telephone" type="number" placeholder="Telephone" maxlength="10">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class=" p-3 mb-3">
+        <h5>Permanent Home Mailing Address</h5>
+        <div formGroupName="permanentHomeMailingAddress">
+            <div class="form-group">
+                <label for="permanentAddress">Address:</label>
+                <input class="form-control" id="permanentAddress" formControlName="address" placeholder="Address" maxlength="80">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="permanentPinCode">Pin Code:</label>
+                    <input class="form-control" id="permanentPinCode" formControlName="pinCode" type="number" placeholder="Pin Code" maxlength="6">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="permanentCell">Cell:</label>
+                    <input class="form-control" id="permanentCell" formControlName="cell" type="number" placeholder="Cell" maxlength="10">
+                </div>
+
+               <div class="form-group col-md-3">
+                   <label for="permanentTelephoneCode">Telephone Code:</label>
+                   <input class="form-control" id="permanentTelephoneCode" formControlName="telephoneCode" type="number" placeholder="Telephone Code" maxlength="3">
+               </div>
+
+               <div class="form-group col-md-3">
+                   <label for="permanentTelephone">Telephone:</label>
+                   <input class="form-control" id="permanentTelephone" formControlName="telephone" type="number" placeholder="Telephone" maxlength="10">
+               </div>
+            </div>
+        </div>
+    </fieldset>
+   </div>
+   <div *ngIf="activeTab === 'emergency-contact'" class="tab-pane active">
+    <h3>Emergency Contact</h3>
+    <fieldset class=" p-3 mb-3">
+        <div formGroupName="emergencyContact">
+            <div class="form-group row">
+                <label for="emergencyContactName" class="col-sm-3 col-form-label">Emergency Contact Name:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="emergencyContactName" formControlName="name" placeholder="Enter name" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="emergencyContactRelation" class="col-sm-3 col-form-label">Relation:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="emergencyContactRelation" formControlName="relation" placeholder="Enter relation" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="emergencyContactAddress" class="col-sm-3 col-form-label">Address:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="emergencyContactAddress" formControlName="address" maxlength="80" placeholder="Enter address" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="emergencyContactTelephoneNo" class="col-sm-3 col-form-label">Telephone No:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="emergencyContactTelephoneNo" type="number" formControlName="telephoneNo" maxlength="10" placeholder="Enter telephone number" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+  </div>
+  <div *ngIf="activeTab === 'passport-and-visa-details'" class="tab-pane active">
+    <h3>Passport and Visa Details</h3>
+    <fieldset class=" p-3 mb-3">
+        <div formGroupName="passportVisaDetails">
+
+            <div class="form-group row">
+                <label for="passportNo" class="col-sm-3 col-form-label">Passport No:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="passportNo" formControlName="passportNo" type="text" placeholder="Enter passport number" maxlength="16"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="passportIssueDate" class="col-sm-3 col-form-label">Passport Issue Date:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="passportIssueDate" formControlName="passportIssueDate" type="date" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="validUptoDate" class="col-sm-3 col-form-label">Valid Upto Date:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="validUptoDate" formControlName="validUptoDate" type="date" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="countryOfIssue" class="col-sm-3 col-form-label">Country of Issue:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="countryOfIssue" formControlName="countryOfIssue" placeholder="Enter country of issue" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="validVisaDetails" class="col-sm-3 col-form-label">Valid Visa Details:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="validVisaDetails" formControlName="validVisaDetails" placeholder="Enter visa details" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="panNumber" class="col-sm-3 col-form-label">PAN Number:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="panNumber" formControlName="panNumber" type="text" placeholder="Enter PAN number" maxlength="16"/>
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+  </div>
+  <div *ngIf="activeTab === 'health-data'" class="tab-pane active">
+    <h3>Health Data</h3>
+    <fieldset class=" p-3 mb-3">
+        <div formGroupName="healthData">
+            <div class="form-group row">
+                <label for="healthDataHeight" class="col-sm-4 col-form-label">Height (cm):</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="healthDataHeight" type="number" formControlName="height" placeholder="Enter height in cm" maxlength="3"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="healthDataWeight" class="col-sm-4 col-form-label">Weight (kg):</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="healthDataWeight" type="number" formControlName="weight" placeholder="Enter weight in kg" maxlength="3"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="healthDataBloodGroup" class="col-sm-4 col-form-label">Blood Group:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="healthDataBloodGroup" formControlName="bloodGroup" placeholder="Enter blood group" maxlength="5"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="eyesightRight" class="col-sm-4 col-form-label">Eyesight Right:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="eyesightRight" formControlName="eyesightRight" placeholder="Enter eyesight for right eye" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="eyesightLeft" class="col-sm-4 col-form-label">Eyesight Left:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="eyesightLeft" formControlName="eyesightLeft" placeholder="Enter eyesight for left eye" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="physicalDisability" class="col-sm-4 col-form-label">Physical Disability:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="physicalDisability" formControlName="physicalDisability" placeholder="Describe physical disability" maxlength="50"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="identificationMarks" class="col-sm-4 col-form-label">Identification Marks:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="identificationMarks" formControlName="identificationMarks" placeholder="Enter identification marks" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+  </div>
+  <div *ngIf="activeTab === 'education'" class="tab-pane active">
+    <h3>Education</h3>
+<fieldset class=" p-3 mb-3">
+    <div formArrayName="education">
+        <div *ngFor="let education of educationControls.controls; let i = index" [formGroupName]="i" class="mb-4">
+            <div class="form-group row">
+                <label for="educationExaminationPassed{{i}}" class="col-sm-4 col-form-label">Examination Passed:</label>
+                <div class="col-sm-8">
+                    <select id="educationExaminationPassed{{i}}" formControlName="examinationPassed" class="form-control">
+                        <option value="SSC">SSC</option>
+                        <option value="HSC">HSC</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="UG">UG</option>
+                        <option value="PG">PG</option>
+                        <option value="B.Tech">B.Tech</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationSpecialisation{{i}}" class="col-sm-4 col-form-label">Specialisation:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationSpecialisation{{i}}" formControlName="specialisation" placeholder="Enter specialisation" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationSchoolCollegeInstitution{{i}}" class="col-sm-4 col-form-label">School/College/Institution:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationSchoolCollegeInstitution{{i}}" formControlName="schoolCollegeInstitution" placeholder="Enter school/college/institution" maxlength="80"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationUniversityBoard{{i}}" class="col-sm-4 col-form-label">University/Board:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationUniversityBoard{{i}}" formControlName="universityBoard" placeholder="Enter university/board" maxlength="80"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationCourseCorres{{i}}" class="col-sm-4 col-form-label">Course Correspondence:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationCourseCorres{{i}}" formControlName="courseCorres" placeholder="Enter course correspondence" maxlength="90"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationDurationOfCourse{{i}}" class="col-sm-4 col-form-label">Duration of Course:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationDurationOfCourse{{i}}" formControlName="durationOfCourse" placeholder="Enter duration of course" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationMonthYearOfPassing{{i}}" class="col-sm-4 col-form-label">Month & Year of Passing:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationMonthYearOfPassing{{i}}" type="month" formControlName="monthYearOfPassing" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationGradeMarks{{i}}" class="col-sm-4 col-form-label">Grade/Marks:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationGradeMarks{{i}}" type="number" formControlName="gradeMarks" placeholder="Enter grade or marks" maxlength="9999"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="educationDistinctions{{i}}" class="col-sm-4 col-form-label">Distinctions:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="educationDistinctions{{i}}" formControlName="distinctions" placeholder="Enter any distinctions" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-12 text-right">
+                    <button type="button" class="btn btn-danger" (click)="removeEducation(i)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addEducation()">Add Education</button>
+</fieldset>
+  </div>
+  <div *ngIf="activeTab === 'languages-known'" class="tab-pane active">
+    <h3>Languages Known</h3>
+<fieldset class=" p-3 mb-3">
+  <div formArrayName="languagesKnown">
+    <div *ngFor="let language of languagesKnown.controls; let i = index" [formGroupName]="i" class="mb-3">
+      <div class="form-group row">
+        <label for="language{{i}}" class="col-sm-4 col-form-label">Language:</label>
+        <div class="col-sm-8">
+          <input id="language{{i}}" formControlName="languageName" class="form-control" placeholder="Enter language">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="speak{{i}}" class="col-sm-4 col-form-label">Speak:</label>
+        <div class="col-sm-8">
+          <input type="checkbox" id="speak{{i}}" formControlName="speakLanguage">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="read{{i}}" class="col-sm-4 col-form-label">Read:</label>
+        <div class="col-sm-8">
+          <input type="checkbox" id="read{{i}}" formControlName="readLanguage">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="write{{i}}" class="col-sm-4 col-form-label">Write:</label>
+        <div class="col-sm-8">
+          <input type="checkbox" id="write{{i}}" formControlName="writeLanguage">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-12 text-right">
+          <button type="button" class="btn btn-danger" (click)="removeLanguage(i)">Remove Language</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="addLanguage()">Add Language</button>
+</fieldset>
+  </div>
+  <div *ngIf="activeTab === 'training-certification'" class="tab-pane active">
+    <h3>Training Certification</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="trainingCertification">
+    <div class="form-group row">
+      <label for="trainingNameOfTrainingCourse" class="col-sm-4 col-form-label">Name of Training Course:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="trainingNameOfTrainingCourse" formControlName="nameOfTrainingCourse" placeholder="Enter name of training course" maxlength="100" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="trainingDuration" class="col-sm-4 col-form-label">Duration:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="trainingDuration" type="month" formControlName="duration" placeholder="Enter duration" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="trainingYear" class="col-sm-4 col-form-label">Year:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="trainingYear" type="number" formControlName="year" placeholder="Enter year" maxlength="4" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="trainingInstituteOrganization" class="col-sm-4 col-form-label">Institute/Organization:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="trainingInstituteOrganization" formControlName="instituteOrganization" placeholder="Enter institute/organization" maxlength="100" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="trainingCertificateAwarded" class="col-sm-4 col-form-label">Certificate Awarded:</label>
+      <div class="col-sm-8">
+        <input class="form-check-input" id="trainingCertificateAwarded" formControlName="certificateAwarded" type="checkbox" />
+        <label class="form-check-label" for="trainingCertificateAwarded">Yes</label>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+  </div>
+  <div *ngIf="activeTab === 'membership-of-professional-institute'" class="tab-pane active">
+    <h3>Membership of Professional Institute</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="membershipOfProfessionalInstitute">
+    <div class="form-group row">
+      <label for="membershipNameOfInstitute" class="col-sm-4 col-form-label">Name of Institute:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="membershipNameOfInstitute" formControlName="nameOfInstitute" placeholder="Enter name of institute" maxlength="100" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="membershipTypeOfMembership" class="col-sm-4 col-form-label">Type of Membership and Position Held:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="membershipTypeOfMembership" formControlName="typeOfMembershipAndPositionHeld" placeholder="Enter type of membership and position held" maxlength="200" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="membershipPeriod" class="col-sm-4 col-form-label">Period:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="membershipPeriod" formControlName="period" placeholder="Enter membership period" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="membershipFromDate" class="col-sm-4 col-form-label">From Date:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="membershipFromDate" formControlName="fromDate" type="date" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="membershipToDate" class="col-sm-4 col-form-label">To Date:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="membershipToDate" formControlName="toDate" type="date" />
+      </div>
+    </div>
+  </div>
+</fieldset>
+  </div>
+  <div *ngIf="activeTab === 'extra-curricular-activity'" class="tab-pane active">
+    <h3>Extra Curricular Activity</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="extraCurricularActivity">
+    <div class="form-group row">
+      <label for="extraCurricularActivity" class="col-sm-4 col-form-label">Activity:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="extraCurricularActivity" formControlName="activity" placeholder="Enter activity" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="institutionAssociationSocietyClub" class="col-sm-4 col-form-label">Institution/Association/Society/Club:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="institutionAssociationSocietyClub" formControlName="institutionAssociationSocietyClub" placeholder="Enter institution/association/society/club" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="year" class="col-sm-4 col-form-label">Year:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="year" type="number" formControlName="year" placeholder="Enter year" maxlength="4" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="positionHeld" class="col-sm-4 col-form-label">Position Held:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="positionHeld" formControlName="positionHeld" placeholder="Enter position held" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="prizesWon" class="col-sm-4 col-form-label">Prizes Won:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="prizesWon" formControlName="prizesWon" placeholder="Enter prizes won" />
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+  </div>
+  <div *ngIf="activeTab === 'skills-summary'" class="tab-pane active">
+    <h3>Skills Summary</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="skillsSummary">
+    <div class="form-group row">
+      <label for="projectTitle" class="col-sm-4 col-form-label">Project Title:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="projectTitle" formControlName="projectTitle" placeholder="Enter project title" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="role" class="col-sm-4 col-form-label">Role:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="role" formControlName="role" placeholder="Enter role" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="teamSize" class="col-sm-4 col-form-label">Team Size:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="teamSize" formControlName="teamSize" placeholder="Enter team size" maxlength="100" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="duration" class="col-sm-4 col-form-label">Duration:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="duration" type="number" formControlName="duration" placeholder="Enter duration" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="languagePlatformOS" class="col-sm-4 col-form-label">Language/Platform/OS:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="languagePlatformOS" formControlName="languagePlatformOS" placeholder="Enter language/platform/OS" maxlength="30" />
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+  </div>
+  <div *ngIf="activeTab === 'work-experience'" class="tab-pane active">
+    <h3>Work Experience</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="workExperience">
+    <div class="row mb-3">
+      <label for="employerNameAndAddress" class="col-sm-4 col-form-label">Employer Name and Address:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="employerNameAndAddress" formControlName="employerNameAndAddress" placeholder="Enter employer name and address" maxlength="100"/>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="durationPeriod" class="col-sm-4 col-form-label">Duration/Period:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="durationPeriod" type="number" formControlName="durationPeriod" placeholder="Enter duration/period" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="durationFrom" class="col-sm-4 col-form-label">From Date:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="durationFrom" formControlName="durationFrom" type="date" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="durationTo" class="col-sm-4 col-form-label">To Date:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="durationTo" formControlName="durationTo" type="date" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="lastPositionHeldDesignation" class="col-sm-4 col-form-label">Last Position Held/Designation:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="lastPositionHeldDesignation" formControlName="lastPositionHeldDesignation" placeholder="Enter last position held/designation" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="natureOfDuties" class="col-sm-4 col-form-label">Nature of Duties:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="natureOfDuties" formControlName="natureOfDuties" placeholder="Describe nature of duties" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="immediateSuperiorNameAndDesignation" class="col-sm-4 col-form-label">Immediate Superior Name and Designation:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="immediateSuperiorNameAndDesignation" formControlName="immediateSuperiorNameAndDesignation" placeholder="Enter immediate superior's name and designation" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-4">
+        <label class="form-label">Gross Emoluments per Month</label>
+      </div>
+      <div class="col-sm-8"></div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="atthetimeofjoining" class="col-sm-4 col-form-label">At the Time of Joining:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="atthetimeofjoining" formControlName="atthetimeofjoining" placeholder="Enter gross emoluments at the time of joining" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="atpresent" class="col-sm-4 col-form-label">At Present:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="atpresent" formControlName="atpresent" placeholder="Enter gross emoluments at present" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="reasonsForLeaving" class="col-sm-4 col-form-label">Reasons for Leaving:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="reasonsForLeaving" formControlName="reasonsForLeaving" placeholder="Enter reasons for leaving" />
+      </div>
+    </div>
+  </div>
+</fieldset>
+  </div>
+  <div *ngIf="activeTab === 'general-data'" class="tab-pane active">
+    <h3>General Data</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="generalData">
+    <!-- Criminal Record -->
+    <div class="row mb-3">
+      <label for="criminalRecord" class="col-sm-4 col-form-label">Criminal Record:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="criminalRecord" formControlName="criminalRecord" />
+      </div>
+    </div>
+
+    <!-- Interviewed by TVM -->
+    <div class="row mb-3">
+      <label for="interviewedByTVM" class="col-sm-4 col-form-label">Have you Interviewed by TVM:</label>
+      <div class="col-sm-8">
+        <input class="form-check-input" id="interviewedByTVM" formControlName="interviewedByTVM" type="checkbox" />
+      </div>
+    </div>
+
+    <!-- Date/Year -->
+    <div class="row mb-3">
+      <label for="dateYear" class="col-sm-4 col-form-label">Date/Year:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="dateYear" formControlName="dateYear" type="date" />
+      </div>
+    </div>
+
+    <!-- Position -->
+    <div class="row mb-3">
+      <label for="position" class="col-sm-4 col-form-label">Position:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="position" formControlName="position" maxlength="100"/>
+      </div>
+    </div>
+
+    <!-- Company Name -->
+    <div class="row mb-3">
+      <label for="companyName" class="col-sm-4 col-form-label">Company Name:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="companyName" formControlName="companyName" maxlength="100"/>
+      </div>
+    </div>
+
+    <!-- Relatives/Acquaintance in TVM -->
+    <div class="row mb-3">
+      <label for="relativesAcquaintanceInTVM" class="col-sm-4 col-form-label">Relatives/Acquaintance in TVM:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="relativesAcquaintanceInTVM" formControlName="relativesAcquaintanceInTVM" placeholder="Enter name" maxlength="100"/>
+      </div>
+    </div>
+
+    <!-- Relatives' Position -->
+    <div class="row mb-3">
+      <label for="relativesPosition" class="col-sm-4 col-form-label">Relatives' Position:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="relativesPosition" formControlName="relativesPosition" maxlength="100"/>
+      </div>
+    </div>
+
+    <!-- How Did You Come to Know -->
+    <div class="row mb-3">
+      <label for="howDidYouComeToKnow" class="col-sm-4 col-form-label">How Did You Come to Know:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="howDidYouComeToKnow" formControlName="howDidYouComeToKnow" maxlength="100"/>
+      </div>
+    </div>
+
+    <!-- Relationship -->
+    <div class="row mb-3">
+      <label for="relationship" class="col-sm-4 col-form-label">Relationship:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="relationship" formControlName="relationship" maxlength="100"/>
+      </div>
+    </div>
+
+    <!-- Company Telephone Nos -->
+    <div class="row mb-3">
+      <label for="companyTelephoneNos" class="col-sm-4 col-form-label">Company Telephone No:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="companyTelephoneNos" formControlName="companyTelephoneNos" type="tel" maxlength="12"/>
+      </div>
+    </div>
+
+    <!-- How Did You Know the Position -->
+    <div class="row mb-3">
+      <label for="howDidYouKnowPosition" class="col-sm-4 col-form-label">How Did You Know the Position:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="howDidYouKnowPosition" formControlName="howDidYouKnowPosition" />
+      </div>
+    </div>
+
+    <!-- Engaged in Personal Business -->
+    <div class="row mb-3">
+      <label for="engagedInPersonalBusiness" class="col-sm-4 col-form-label">Engaged in Personal Business:</label>
+      <div class="col-sm-8">
+        <input class="form-check-input" id="engagedInPersonalBusiness" formControlName="engagedInPersonalBusiness" type="checkbox" />
+      </div>
+    </div>
+
+    <!-- Nature of Business -->
+    <div class="row mb-3">
+      <label for="natureOfBusiness" class="col-sm-4 col-form-label">Nature of Business:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="natureOfBusiness" formControlName="natureOfBusiness" />
+      </div>
+    </div>
+
+    <!-- Has Contract Bond -->
+    <div class="row mb-3">
+      <label for="hasContractBond" class="col-sm-4 col-form-label">Has Contract Bond:</label>
+      <div class="col-sm-8">
+        <input class="form-check-input" id="hasContractBond" formControlName="hasContractBond" type="checkbox" />
+      </div>
+    </div>
+
+    <!-- Contract Bond Details -->
+    <div class="row mb-3">
+      <label for="contractBondDetails" class="col-sm-4 col-form-label">Contract Bond Details:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="contractBondDetails" formControlName="contractBondDetails" />
+      </div>
+    </div>
+
+    <!-- When Can You Join -->
+    <div class="row mb-3">
+      <label for="whenCanYouJoin" class="col-sm-4 col-form-label">When Can You Join:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="whenCanYouJoin" formControlName="whenCanYouJoin" type="date"/>
+      </div>
+    </div>
+
+    <!-- Superior 1 Details -->
+    <div class="row mb-3">
+      <label for="superior1Name" class="col-sm-4 col-form-label">Superior 1 Name:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior1Name" formControlName="superior1Name" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior1Address" class="col-sm-4 col-form-label">Superior 1 Address:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior1Address" formControlName="superior1Address" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior1TelephoneNos" class="col-sm-4 col-form-label">Superior 1 Telephone Nos:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior1TelephoneNos" formControlName="superior1TelephoneNos" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior1Company" class="col-sm-4 col-form-label">Superior 1 Company:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior1Company" formControlName="superior1Company" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior1Position" class="col-sm-4 col-form-label">Superior 1 Position:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior1Position" formControlName="superior1Position" />
+      </div>
+    </div>
+
+    <!-- Superior 2 Details -->
+    <div class="row mb-3">
+      <label for="superior2Name" class="col-sm-4 col-form-label">Superior 2 Name:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior2Name" formControlName="superior2Name" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior2Address" class="col-sm-4 col-form-label">Superior 2 Address:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior2Address" formControlName="superior2Address" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior2TelephoneNos" class="col-sm-4 col-form-label">Superior 2 Telephone Nos:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior2TelephoneNos" formControlName="superior2TelephoneNos" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior2Company" class="col-sm-4 col-form-label">Superior 2 Company:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior2Company" formControlName="superior2Company" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="superior2Position" class="col-sm-4 col-form-label">Superior 2 Position:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superior2Position" formControlName="superior2Position" />
+      </div>
+    </div>
+
+    <!-- Superior Email IDs -->
+    <div class="row mb-3">
+      <label for="superiorEmailId1" class="col-sm-4 col-form-label">Superior Email ID 1:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superiorEmailId1" formControlName="superiorEmailId1" type="email"/>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="superiorEmailId2" class="col-sm-4 col-form-label">Superior Email ID 2:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="superiorEmailId2" formControlName="superiorEmailId2" type="email"/>
+      </div>
+    </div>
+  </div>
+</fieldset>
+  </div>
+  <div *ngIf="activeTab === 'declaration'" class="tab-pane active">
+    <h3>Declaration</h3>
+<fieldset class=" p-3 mb-3">
+  <div formGroupName="declaration">
+    <!-- Partner or Relative of Director -->
+    <div class="row mb-3">
+      <label for="isPartnerOrRelativeOfDirector" class="col-sm-4 col-form-label">Is Partner or Relative of Director:</label>
+      <div class="col-sm-8 custom-checkbox">
+        <input class="form-check-input" id="isPartnerOrRelativeOfDirector" formControlName="partnerOrRelativeOfDirector" type="checkbox" />
+      </div>
+    </div>
+
+
+    <!-- Place -->
+    <div class="row mb-3">
+      <label for="place" class="col-sm-4 col-form-label">Place:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="place" formControlName="place" />
+      </div>
+    </div>
+
+    <!-- Date -->
+    <div class="row mb-3">
+      <label for="date" class="col-sm-4 col-form-label">Date:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="date" formControlName="date" type="date" />
+      </div>
+    </div>
+
+    <!-- Applicant Name -->
+    <div class="row mb-3">
+      <label for="applicantName" class="col-sm-4 col-form-label">Applicant Name:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="applicantName" formControlName="applicantName" />
+      </div>
+    </div>
+
+    <!-- Applicant Signature -->
+    <div class="row mb-3">
+      <label for="applicantSignature" class="col-sm-4 col-form-label">Applicant Signature:</label>
+      <div class="col-sm-8">
+        <input class="form-control" id="applicantSignature" formControlName="applicantSignature" type="text" />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</fieldset>
+  </div>
+
+ </div>
+
+
+</form>

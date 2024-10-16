@@ -1,0 +1,25 @@
+<div class="comments-container">
+  <div class="comments-dialog">
+    <div *ngIf="comments.length === 0">No comments available.</div>
+    <div *ngFor="let comment of comments" class="comment-box" 
+         [ngClass]="{'user-comment': comment.authorType === 'user', 'manager-comment': comment.authorType === 'manager'}">
+      <p>{{ comment.text }}</p>
+      <small>{{ comment.createdAt | date: 'short' }}</small>
+    </div>
+  </div>
+  <div class="input-container">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>New Comment</mat-label>
+      <input matInput [(ngModel)]="newComment" type="text" placeholder="Enter your comment">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Author Type</mat-label>
+      <mat-select [(ngModel)]="newAuthorType">
+        <mat-option value="user">User</mat-option>
+        <mat-option value="manager">Manager</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addComment()">Send</button>
+    <button mat-raised-button color="primary" (click)="oncancel()">Cancel</button>
+  </div>
+</div>

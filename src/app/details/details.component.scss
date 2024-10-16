@@ -1,0 +1,35 @@
+th{
+  background-color:#ebebeb;
+  padding: 10px;
+}
+
+.detail-page{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.btn-1{
+  color:white;
+  background-color: #2e3b61;
+}
+
+.btn-2{
+  color:white ;
+  background-color:#2a5298 ;
+}
+
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+.table-container thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}

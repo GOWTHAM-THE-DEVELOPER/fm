@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <div class="nav-item" [class.active]="activeNavItem === 'overview'" (click)="navigateToOverview()">Overview</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'dashboard'" (click)="navigateToDashboard()">Dashboard</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'calendar'" (click)="navigateToCalendar()">Calendar</div>
+</nav>
+
+<div class="main-content">
+  <app-overview *ngIf="activeNavItem === 'overview'"></app-overview>
+  <app-dashboard *ngIf="activeNavItem === 'dashboard'"></app-dashboard>
+  <app-calendar *ngIf="activeNavItem === 'calendar'"></app-calendar>
+</div>

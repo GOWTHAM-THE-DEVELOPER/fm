@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div class="nav-item" [class.active]="activeNavItem === 'skillset'" (click)="navigateToSkillSet()">Skill Set</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'goals'" (click)="navigateToGoal()">Goals</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'competency'" (click)="navigateToCompetency()">Competency</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'feedback'" (click)="navigateToFeedback()">Feedback</div>
+    
+  </nav>
+
+  <div class="main-content">
+    <app-goals *ngIf="activeNavItem === 'goals'"></app-goals>
+    <app-skillset-performance *ngIf="activeNavItem === 'skillset'"></app-skillset-performance>
+    <app-competency *ngIf="activeNavItem === 'competency'"></app-competency>
+    <app-performance-feedback *ngIf="activeNavItem === 'feedback'"></app-performance-feedback>
+  </div>

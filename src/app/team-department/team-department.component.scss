@@ -1,0 +1,93 @@
+.team-dept-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+
+  .card select{
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.464);
+    border-radius: 6px;
+    outline: none;
+  }
+
+  .team-overview {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .card {
+      flex: 1;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow-y: auto;
+      max-height: 200px;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        color: #007bff;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 5px 0;
+        color: #333;
+      }
+    }
+  }
+}
+
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.member-count {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.member-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.status {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.leave {
+  color: orange;
+}
+
+.present {
+  color: green;
+}

@@ -1,0 +1,70 @@
+.profile{
+  font-size: 56px;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+
+.profile-set{
+  color: white;
+  background-color:#aeaeae;
+  width: 60px;
+  height: 60px;
+  border-radius: 7px;
+}
+
+.details{
+  list-style: none;
+  padding-left: 10px;
+  // margin-top: -5;
+}
+
+.modal-body {
+  background-color: #edf0f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.Manag-account {
+  background-color: white;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+}
+
+.People-opn {
+  background-color: white;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+}
+
+.zoho {
+  background-color:white;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+}
+
+.account{
+  border-color: #0088ff;
+  color:#0088ff;
+  border-radius: 5px;
+  border-width: thin;
+  background-color: white;
+}
+
+.away{
+  padding-left: 15rem;
+  color: #ec5158;
+  cursor: pointer;
+}
+.shadow{
+  margin-left: 23rem;
+  margin-top: 3rem;
+}
+

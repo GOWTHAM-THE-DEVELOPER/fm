@@ -1,0 +1,19 @@
+
+<nav class="navbar">
+    <div class="nav-item" [class.active]="activeNavItem === 'announcements'" (click)="navigateAnnouncements()">Announcements</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'policies'" (click)="navigatePolicies()">Policies</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'employeeTree'" (click)="navigateEmployeeTree()">Employee Tree</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'departmentTree'" (click)="navigateDepartmentTree()">Department Tree</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'departmentDirectory'" (click)="navigateDepartmentDirectory()">Department Directory
+    </div>
+    <div class="nav-item" [class.active]="activeNavItem === 'birthdayFolks'" (click)="navigateBirthdayFolks()">Birthday Folks</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'newHires'" (click)="navigateNewHires()">New Hires</div>
+  </nav>
+
+  <app-announcements *ngIf="activeNavItem === 'announcements'"></app-announcements>
+  <app-policies *ngIf="activeNavItem === 'policies'"></app-policies>
+  <app-employee-tree *ngIf="activeNavItem === 'employeeTree'"></app-employee-tree>
+  <app-department-tree *ngIf="activeNavItem === 'departmentTree'"></app-department-tree>
+  <app-department-directory *ngIf="activeNavItem === 'departmentDirectory'"></app-department-directory>
+  <app-birthday-card *ngIf="activeNavItem === 'birthdayFolks'"></app-birthday-card>
+  <app-new-hires-card *ngIf="activeNavItem === 'newHires'"></app-new-hires-card>

@@ -1,0 +1,82 @@
+.leave-report-container {
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leave-report-title {
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .leave-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+  }
+  
+  .leave-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    position: relative;
+    transition: box-shadow 0.3s;
+    // height: 25px;
+  
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    &:hover .apply-leave-icon {
+      display: inline-flex;
+    }
+  }
+  
+  .leave-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 16px;
+  }
+  
+  .leave-details {
+    flex-grow: 1;
+  }
+  
+  .leave-type {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .leave-available {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .apply-leave-icon {
+    display: none;
+    align-items: center;
+    color: green;
+    font-size: 1rem;
+    position: absolute;
+    // right: 16px;
+    left: 90%;
+    // justify-content: end;
+    cursor: pointer;
+  }
+  
+  .apply-leave-icon i {
+    margin-right: 8px;
+  }
+  

@@ -1,0 +1,59 @@
+.table-container {
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.leave-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.leave-table mat-header-cell {
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+}
+
+.leave-table mat-cell {
+    padding: 8px;
+    text-align: center;
+}
+
+.leave-table tr:nth-child(even) {
+    background-color: #e3f2fd;
+}
+
+.leave-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.leave-table th {
+    text-transform: uppercase;
+}
+
+.leave-table td {
+    vertical-align: middle;
+}
+
+button {
+    margin: 0 4px;
+    font-size: 14px;
+}
+.approved {
+    background-color: lightgreen; /* Green for approved */
+}
+
+.rejected {
+    background-color: lightcoral; /* Red for rejected */
+}
+

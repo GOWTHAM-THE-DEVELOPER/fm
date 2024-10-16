@@ -1,0 +1,30 @@
+{
+  "announcements": [
+    {
+      "id": "7b35",
+      "name": "DURAI RAJ",
+      "title": "Announcement",
+      "message": "Welcome....",
+      "attachment": null,
+      "category": "updates",
+      "expiry": "2024-08-29",
+      "location": "branch",
+      "disableComments": true,
+      "pinAnnouncement": false,
+      "notifyAll": false
+    },
+    {
+      "id": "ff40",
+      "name": "Durai",
+      "title": "Announcement 1",
+      "message": "Welcome...",
+      "attachment": null,
+      "category": "news",
+      "expiry": "2024-08-29",
+      "location": "remote",
+      "disableComments": false,
+      "pinAnnouncement": true,
+      "notifyAll": false
+    }
+  ]
+}

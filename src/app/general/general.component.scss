@@ -1,0 +1,90 @@
+.d-flex-gap {
+  display: flex;
+  gap: 10rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 34px;
+  color: darkblue;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  font-weight: 500;
+}
+
+.fa-user {
+  font-size: 25px;
+  height: 5px;
+  width: 30px;
+}
+
+.table {
+  width: 100%;
+  margin: 36px 0;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.table-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+th {
+  background-color: #ebebeb;
+  padding: 10px;
+}
+
+.table-btn {
+  background-color: #30a3bf;
+  color: white;
+  float: right;
+  margin-top: 0rem;
+}
+
+.table-btn-1 {
+  background-color: #30a3bf;
+  color: white;
+  float: right;
+}
+
+.invalid-input {
+  border-color: red;
+}
+
+.next {
+  background-color: #8929a6;
+  color: white;
+  float: right;
+}
+
+.fa-chevron-right {
+  font-size: 13px;
+  padding: 4px;
+}
+
+.radio-yes .form-check-input:checked {
+  background-color: green;
+  border-color: green;
+}
+
+.radio-no .form-check-input:checked {
+  background-color: red;
+  border-color: red;
+}
+
+.input-group-text {
+  cursor: pointer;
+}
+
+.general-page {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 6rem 1rem 1rem;
+}

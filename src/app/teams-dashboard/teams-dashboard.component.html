@@ -1,0 +1,25 @@
+<!-- <div class="teams-navigation">
+    <a routerLink="/teams-dashboard/team-space" routerLinkActive="active">Team Space</a>
+    <a routerLink="/teams-dashboard/reportees" routerLinkActive="active">Reportees</a>
+    <a routerLink="/teams-dashboard/department" routerLinkActive="active">Department</a>
+    <a routerLink="/teams-dashboard/projects" routerLinkActive="active">Projects</a>
+    <a routerLink="/teams-dashboard/team-list" routerLinkActive="active">Team List</a>
+  </div>
+  <router-outlet></router-outlet> -->
+
+  <nav class="navbar">
+    <div class="nav-item" [class.active]="activeNavItem === 'team-space'" (click)="navigateToMySpace()">Team Space</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'team-reportees'" (click)="navigateToReportees()">Reportees</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'department'" (click)="navigateToDepartment()">Department</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'projects'" (click)="navigateToProjects()">Projects</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'team-list'" (click)="navigateToTeamList()">Team List</div>
+  </nav>
+  
+
+  <div class="main-content">
+    <app-teams-space *ngIf="activeNavItem === 'team-space'"></app-teams-space>
+    <app-team-reportees *ngIf="activeNavItem === 'team-reportees'"></app-team-reportees>
+    <app-team-department *ngIf="activeNavItem === 'department'"></app-team-department>
+    <app-team-project *ngIf="activeNavItem === 'projects'"></app-team-project>
+    <app-team-list *ngIf="activeNavItem === 'team-list'"></app-team-list>
+  </div>

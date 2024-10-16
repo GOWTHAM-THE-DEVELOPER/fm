@@ -1,0 +1,109 @@
+.label-spacing {
+  margin-bottom: 5px;
+}
+
+h2{
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: -7px;
+  font-size: 1.5rem;
+  margin-top: 34px;
+  color: darkblue;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  font-weight: 500;
+}
+.mt-5{
+  margin-top: 1rem !important;
+}
+
+.mt-3 {
+    margin-top: 2rem !important;
+}
+
+.adjust{
+  margin-top: 15px;
+}
+label{
+  font-weight: 700;
+}
+th{
+  background-color:#ebebeb;
+  padding: 10px;
+}
+
+.serious{
+  margin-left: -8rem;
+}
+
+.submit{
+
+  background-color:  #30a3bf;
+  color: white;
+}
+
+.d-save{
+  background-color:  #30a3bf;
+  color: white;
+}
+
+.label-spacing {
+  margin-bottom: 20px;
+}
+
+
+.invalid-input {
+  border-color: red;
+}
+
+.div-spacing{
+  margin-top: 30px;
+}
+
+.label-spacing {
+  margin-bottom: 10px;
+}
+
+.table-btn{
+  background-color:  #30a3bf;
+  color: white;
+  margin-left: 76rem;
+  margin-bottom: 5px;
+}
+
+.fa-plus{
+  color: white;
+  background-color:  #30a3bf;
+  font-size: 15px;
+  width: 25px;
+  padding: 5px;
+  height: 25px;
+
+
+}
+
+.add{
+  color: #30a3bf;
+  float: right;
+  margin-top:-13px;
+}
+
+.radio-yes .form-check-input:checked {
+  background-color: green;
+  border-color: green;
+}
+
+.radio-no .form-check-input:checked {
+  background-color: red;
+  border-color: red;
+}
+
+.proffession-page{
+  display: flex;
+  flex-direction: column;
+  width: 88vw;
+}
+
+

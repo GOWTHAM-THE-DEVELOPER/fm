@@ -1,0 +1,149 @@
+<nav class="breadcrumb">
+    <span class="breadcrumb-item">Operation</span>
+</nav>
+
+<div class="container mt-4" *ngIf="viewActive" id="control">
+    <!-- User Profile Card -->
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-2 d-flex justify-content-center align-items-center">
+            <div class="icon-wrapper">
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">1 - PRAVIN P</h5>
+              <p class="card-text">Role: Admin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  
+    <!-- Search Bar -->
+    <div class="input-group  mb-3">
+        <span class="input-group-text" id="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+        <input type="text" class="form-control" placeholder="Search Operations" aria-label="Search" aria-describedby="search-icon">
+      </div>
+      
+      
+      
+  
+    <!-- Operations Section -->
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h5>Operations</h5>
+          <a class="bg" (click)="viewClick()">View all</a>
+        </div>
+        <p>Initiate and manage crucial HR processes, and add and manage employee-related data</p>
+  
+        <!-- Operations List -->
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center leave-item">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-umbrella-beach fa-flip-horizontal me-3"></i>
+              Leave Tracker
+            </div>
+            <span class="explore-link">Explore</span>
+          </a>
+        
+          <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center files-item">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-file me-3"></i>
+              Files
+            </div>
+            <span class="explore-link">Explore</span>
+          </a>
+        
+          <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center employee-item">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-users-rectangle me-3"></i>
+              Employee Information
+            </div>
+            <span class="explore-link">Explore</span>
+          </a>
+        
+          <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center travel-item">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-plane me-3"></i>
+              Travel
+            </div>
+            <span class="explore-link">Explore</span>
+          </a>
+        
+          <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center tasks-item">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-list-check me-3"></i>
+              Tasks
+            </div>
+            <span class="explore-link">Explore</span>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-4" *ngIf="!viewActive">
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Search Services" [(ngModel)]="searchTerm">
+        </div>
+      </div>
+      
+    </div>
+    <h2>Services</h2>
+  
+    <!-- Filtered Services -->
+    <div class="row">
+      <div class="col-md-3 mb-3" *ngFor="let service of filteredServices()">
+        <div class="card">
+          <div class="card-body text-center">
+            <!-- Icon Container with background color and box styling -->
+            <div class="icon-box" [ngClass]="{
+              'bg-leave-tracker': service.title === 'Leave Tracker',
+              'bg-files': service.title === 'Files',
+              'bg-employee-info': service.title === 'Employee Information',
+              'bg-travel': service.title === 'Travel',
+              'bg-tasks': service.title === 'Tasks',
+              'bg-hr-letters': service.title === 'HR Letters',
+              'bg-general': service.title === 'General',
+              'bg-approvals': service.title === 'Approvals',
+              'bg-data-admin': service.title === 'Data Administration'
+            }">
+              <!-- Displaying Specific Font Awesome Icons Based on the Service -->
+              <i class="fa-solid" [ngClass]="{
+                'fa-umbrella-beach fa-flip-horizontal': service.title === 'Leave Tracker',
+                'fa-file': service.title === 'Files',
+                'fa-users-rectangle': service.title === 'Employee Information',
+                'fa-plane': service.title === 'Travel',
+                'fa-list-check': service.title === 'Tasks',
+                'fa-envelope': service.title === 'HR Letters',
+                'fa-clipboard': service.title === 'General',
+                'fa-thumbs-up': service.title === 'Approvals',
+                'fa-database': service.title === 'Data Administration'
+              }"></i>
+            </div>
+            
+            <!-- Service Title -->
+            <h5 class="card-title mt-3">{{ service.title }}</h5>
+    
+            <!-- Service Description -->
+            <p class="card-text">{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

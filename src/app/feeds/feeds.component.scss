@@ -1,0 +1,68 @@
+.profile-set {
+    color: white;
+    background-color: #E5E5F0;
+    border-radius: 7px;
+    padding-left: 6px;
+    padding-right: 5px;
+    padding-top: 4px;
+    margin-left: 3rem;
+    margin-top: -6rem;
+    
+  }
+
+  .profile {
+   
+    color: rgb(0, 0, 0);
+    font-size: 47px;
+  }
+  
+.post-list{
+    border-color: rgb(212, 212, 212);
+    height:155px;
+  }
+
+.dropdown-menu {
+    padding: 0.5rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 150px; 
+    right: 0; 
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 0.375rem 1.5rem;
+    color: #212529;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #000;
+  }
+  
+ 
+  
+
+  .datas{
+    padding-left: 3rem;
+  }
+  .form-fied {
+      margin-left: -3rem;
+  }
+
+  .fied{
+    padding-left: 6rem;
+  }
+
+
+  input{
+    border-color:white
+  }

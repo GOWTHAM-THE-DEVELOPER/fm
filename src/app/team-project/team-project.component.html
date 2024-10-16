@@ -1,0 +1,237 @@
+
+
+
+  <!-- Toast Notification -->
+  <div
+    class="toast"
+    [ngClass]="{'show': showToast, 'hide': !showToast}"
+    [style.position]="'fixed'"
+    [style.bottom]="'20px'"
+    [style.right]="'20px'"
+    [style.minWidth]="'250px'"
+    [style.zIndex]="'1051'"
+    role="alert"
+  >
+    <div class="toast-header">
+      <strong class="mr-auto">{{ toastTitle }}</strong>
+      <small class="text-muted">{{ toastTime }}</small>
+      <button
+        type="button"
+        class="ml-2 mb-1 close"
+        aria-label="Close"
+        (click)="hideToast()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">{{ toastMessage }}</div>
+  </div>
+<div class="container mt-4">
+  <!-- Project List Tab -->
+  <div class="projectlist">
+    <div class="pro">Project List</div>
+  </div>
+  <!-- Add Project Button -->
+  <div class="card-body">
+    <button type="button" (click)="disable()" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasForm" aria-controls="offcanvasForm">Add Project</button>
+  </div>
+</div>
+
+<!-- Table to Display Project Data -->
+<table class="project-table">
+  <thead>
+    <tr>
+      <th>Project Name</th>
+      <th>Client Name</th>
+      <th>Domain</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of submittedData">
+      <td>{{ item.projectname }}</td>
+      <td>{{ item.clientname }}</td>
+      <td>{{ item.domain }}</td>
+      <td>{{item.projectStatus}}</td>
+      <!-- <td>
+        <select>
+          <option value="">--select--</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+      </td> -->
+      <td>
+        <button class="edit-btn" (click)="edit(item.id)" class="alert alert-primary" role="alert" data-bs-toggle="offcanvas" data-bs-target="#offcanvasForm" aria-controls="offcanvasForm">Edit</button>
+        <button class="delete-btn" (click)="delete(item.id,'Success', 'Project deleted successfully!')" class="alert alert-danger" role="alert">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+ 
+  
+<!-- Add Project Form -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasForm" aria-labelledby="offcanvasFormLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasFormLabel">{{ isEditMode ? 'Edit Project' : 'Add Project' }}</h5>
+    <button type="button" class="btn-close" data-bs-target="#offcanvasForm" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  
+  </div>
+  <div class="offcanvas-body">
+    <form [formGroup]="projectForm" (ngSubmit)="isEditMode ? update('Success', 'Project updated successfully!') : onSubmit('Success', 'Project submitted successfully!')">
+          <!-- Project Name -->
+          <div class="mb-3">
+            <label for="projectname" class="form-label">Project Name</label>
+            <input type="text" class="form-control" id="projectname" formControlName="projectname" [class.is-invalid]="projectForm.get('projectname')?.invalid && (projectForm.get('projectname')?.dirty || projectForm.get('projectname')?.touched)">
+            <div *ngIf="projectForm.get('projectname')?.invalid && (projectForm.get('projectname')?.dirty || projectForm.get('projectname')?.touched)" class="invalid-feedback">
+              <div *ngIf="projectForm.get('projectname')?.errors?.['required']">
+                Project name is required.
+              </div>
+              <div *ngIf="projectForm.get('projectname')?.errors?.['minlength']">
+                Project name must be at least 3 characters long.
+              </div>
+            </div>
+          </div>
+    
+          <!-- Client Name -->
+          <div class="mb-3">
+            <label for="clientname" class="form-label">Client Name</label>
+            <input type="text" class="form-control" id="clientname" formControlName="clientname" [class.is-invalid]="projectForm.get('clientname')?.invalid && (projectForm.get('clientname')?.dirty || projectForm.get('clientname')?.touched)">
+            <div *ngIf="projectForm.get('clientname')?.invalid && (projectForm.get('clientname')?.dirty || projectForm.get('clientname')?.touched)" class="invalid-feedback">
+              Client name is required.
+            </div>
+          </div>
+    
+          <!-- Domain -->
+          <div class="mb-3">
+            <label for="domain" class="form-label">Domain</label>
+            <input type="text" class="form-control" id="domain" formControlName="domain" [class.is-invalid]="projectForm.get('domain')?.invalid && (projectForm.get('domain')?.dirty || projectForm.get('domain')?.touched)">
+            <div *ngIf="projectForm.get('domain')?.invalid && (projectForm.get('domain')?.dirty || projectForm.get('domain')?.touched)" class="invalid-feedback">
+              Domain name is required.
+            </div>
+          </div>
+    
+          <!-- Project Start Date -->
+          <div class="mb-3">
+            <label for="startDate" class="form-label">Project Start Date</label>
+            <input type="date" class="form-control" id="startDate" formControlName="startDate" [class.is-invalid]="projectForm.get('startDate')?.invalid && (projectForm.get('startDate')?.dirty || projectForm.get('startDate')?.touched)">
+            <div *ngIf="projectForm.get('startDate')?.invalid && (projectForm.get('startDate')?.dirty || projectForm.get('startDate')?.touched)" class="invalid-feedback">
+              Project start date is required.
+            </div>
+          </div>
+    
+          <!-- Voice -->
+          <div class="mb-3">
+            <label for="voice" class="form-label">Voice</label>
+            <input type="text" class="form-control" id="voice" formControlName="voice" [class.is-invalid]="projectForm.get('voice')?.invalid && (projectForm.get('voice')?.dirty || projectForm.get('voice')?.touched)">
+            <div *ngIf="projectForm.get('voice')?.invalid && (projectForm.get('voice')?.dirty || projectForm.get('voice')?.touched)" class="invalid-feedback">
+              <div *ngIf="projectForm.get('voice')?.errors?.['maxlength']">
+                Voice must be less than 100 characters.
+              </div>
+            </div>
+          </div>
+    
+          <!-- Voice Start Date -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="voicestartDate" class="form-label">Voice Start Date</label>
+                <input type="date" class="form-control" id="voicestartDate" formControlName="voicestartDate" [class.is-invalid]="projectForm.get('voicestartDate')?.invalid && (projectForm.get('voicestartDate')?.dirty || projectForm.get('voicestartDate')?.touched)">
+                <div *ngIf="projectForm.get('voicestartDate')?.invalid && (projectForm.get('voicestartDate')?.dirty || projectForm.get('voicestartDate')?.touched)" class="invalid-feedback">
+                  Please provide a valid Voice Start Date.
+                </div>
+              </div>
+            </div>
+    
+            <!-- Voice End Date -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="voiceendDate" class="form-label">Voice End Date</label>
+                <input type="date" class="form-control" id="voiceendDate" formControlName="voiceendDate" >
+                <div *ngIf="projectForm.get('voiceendDate')?.invalid && (projectForm.get('voiceendDate')?.dirty || projectForm.get('voiceendDate')?.touched)" class="invalid-feedback">
+                  Please provide a valid Voice End Date.
+                </div>
+              </div>
+            </div>  
+          </div>
+    
+          <!-- Coding -->
+          <div class="mb-3">
+            <label for="coding" class="form-label">Coding</label>
+            <input type="text" class="form-control" id="coding" formControlName="coding" [class.is-invalid]="projectForm.get('coding')?.invalid && (projectForm.get('coding')?.dirty || projectForm.get('coding')?.touched)">
+            <div *ngIf="projectForm.get('coding')?.invalid && (projectForm.get('coding')?.dirty || projectForm.get('coding')?.touched)" class="invalid-feedback">
+              <div *ngIf="projectForm.get('coding')?.errors?.['maxlength']">
+                Coding must be less than 100 characters.
+              </div>
+            </div>
+          </div>
+    
+          <!-- Coding Start Date -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="codingstartDate" class="form-label">Coding Start Date</label>
+                <input type="date" class="form-control" id="codingstartDate" formControlName="codingstartDate" [class.is-invalid]="projectForm.get('codingstartDate')?.invalid && (projectForm.get('codingstartDate')?.dirty || projectForm.get('codingstartDate')?.touched)">
+                <div *ngIf="projectForm.get('codingstartDate')?.invalid && (projectForm.get('codingstartDate')?.dirty || projectForm.get('codingstartDate')?.touched)" class="invalid-feedback">
+                  Please provide a valid Coding Start Date.
+                </div>
+              </div>
+            </div>
+    
+            <!-- Coding End Date -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="codingendDate" class="form-label">Coding End Date</label>
+                <input type="date" class="form-control" id="codingendDate" formControlName="codingendDate"  >
+                <div *ngIf="projectForm.get('codingendDate')?.invalid && (projectForm.get('codingendDate')?.dirty || projectForm.get('codingendDate')?.touched)" class="invalid-feedback">
+                  Please provide a valid Coding End Date.
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Asset -->
+          <div class="mb-3 ">
+            <label class="form-label" >Asset</label>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="laptop" value="laptop" formControlName="asset1" (change)="onCheckboxChange($event)"/>
+              <label class="form-check-label" for="laptop">Laptop</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="charger" value="charger" formControlName="asset2" (change)="onCheckboxChange($event)"/>
+              <label class="form-check-label" for="charger">Charger</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="headset" value="headset" formControlName="asset3" (change)="onCheckboxChange($event)">
+              <label class="form-check-label" for="headset">Headset</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="mouse" value="mouse" formControlName="asset4" (change)="onCheckboxChange($event)">
+              <label class="form-check-label" for="mouse">Mouse</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="projectStatus" class="form-label">Project Status</label>
+            <select class="form-select" id="projectStatus" formControlName="projectStatus">
+              <option value="">--Select Status--</option>
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Pending">Pending</option>
+            </select>
+            <div *ngIf="projectForm.get('projectStatus')?.invalid && (projectForm.get('projectStatus')?.dirty || projectForm.get('projectStatus')?.touched)" class="invalid-feedback">
+              Project status is required.
+            </div>
+          </div>
+          <!-- Submit and Cancel Buttons -->
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2" [disabled]="submit">Submit</button>
+           <button type="button" class="btn btn-secondary" (click)="update('Success', 'Project updated successfully!')" [disabled]="updatebtn">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>    
+
+
+
+

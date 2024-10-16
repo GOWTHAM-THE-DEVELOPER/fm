@@ -1,0 +1,11 @@
+<nav class="navbar">
+    <div class="nav-item" [class.active]="activeNavItem === 'my-task'" (click)="navigateToMyTask()">My Tasks</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'track-task'" (click)="navigateToTrackTask()">Track Tasks</div>
+    <div class="nav-item" [class.active]="activeNavItem === 'form-view'" (click)="navigateToFormView()">Form View</div>
+  </nav>
+
+  <div class="main-content">
+    <app-track-task *ngIf="activeNavItem === 'track-task'"></app-track-task>
+    <app-my-task *ngIf="activeNavItem === 'my-task'"></app-my-task>
+    <app-form-view *ngIf="activeNavItem === 'form-view'"></app-form-view>
+  </div>

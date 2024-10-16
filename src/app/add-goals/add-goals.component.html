@@ -1,0 +1,51 @@
+<div class="add-goal-container mt-3 ">
+  <form [formGroup]="addGoalForm" (ngSubmit)="addGoal()">
+    <mat-form-field appearance="fill">
+      <mat-label>Goal Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter goal name">
+      <mat-error *ngIf="addGoalForm.get('name')?.invalid">Goal name is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Enter description"></textarea>
+      <mat-error *ngIf="addGoalForm.get('description')?.invalid">Description is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        <mat-option *ngFor="let priority of ['High', 'Medium', 'Low']" [value]="priority">
+          {{ priority }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="startDatePicker" formControlName="startDate" placeholder="Choose a date">
+      <mat-datepicker-toggle matPrefix [for]="startDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #startDatePicker></mat-datepicker>
+      <mat-error *ngIf="addGoalForm.get('startDate')?.invalid">Start date is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="endDatePicker" formControlName="endDate" placeholder="Choose a date">
+      <mat-datepicker-toggle matPrefix [for]="endDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #endDatePicker></mat-datepicker>
+      <mat-error *ngIf="addGoalForm.get('endDate')?.invalid">End date is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Progress</mat-label>
+      <input matInput formControlName="progress" type="number" placeholder="Enter progress percentage">
+      <mat-error *ngIf="addGoalForm.get('progress')?.invalid">Progress must be between 0 and 100.</mat-error>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Update Goal' : 'Add Goal' }}</button>
+      <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

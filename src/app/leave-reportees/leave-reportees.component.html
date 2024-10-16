@@ -1,0 +1,29 @@
+<div class="view-toggle">
+  <button (click)="toggleView()" [ngClass]="{ 'active': isGridView }">
+    <i class="fa fa-th" *ngIf="isGridView"></i>
+    <i class="fa fa-th-list" *ngIf="!isGridView"></i>
+  </button>
+</div>
+
+<div [ngClass]="{ 'grid-container': isGridView, 'list-container': !isGridView }">
+  <div *ngFor="let employee of employees" [ngClass]="{ 'grid-item': isGridView, 'list-item': !isGridView }">
+    <div class="icons">
+      <button mat-icon-button class="phone-icon" (click)="toggleOptions(employee.employeeId)">
+        📞
+      </button>
+      <div *ngIf="selectedEmployee === employee.employeeId" class="options">
+        <button mat-menu-item (click)="chat(employee.employeeId)">Chat</button>
+        <button mat-menu-item (click)="audioCall(employee.employeeId)">Audio Call</button>
+        <button mat-menu-item (click)="videoCall(employee.employeeId)">Video Call</button>
+      </div>
+    </div>
+
+    <img [src]="employee.profilePicture" alt="Profile Picture">
+    <div>{{ employee.employeeName }}</div>
+    <div>Leave booked this year: {{ employee.leaveBooked }}</div>
+    <div>General Timing: {{ employee.generalTimining }}</div>
+    <div class="status">
+      <span [ngClass]="employee.status">{{ employee.status }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="goals-container">
+  <!-- Stepper Process -->
+  <mat-horizontal-stepper class="goal-stepper">
+    <mat-step [completed]="step1Completed">
+      <ng-template matStepLabel>
+        <mat-icon *ngIf="step1Completed" color="primary">check_circle</mat-icon>
+        Goals Added
+      </ng-template>
+    </mat-step>
+
+    <mat-step [completed]="step2Completed">
+      <ng-template matStepLabel>
+        <mat-icon *ngIf="step2Completed" color="primary">check_circle</mat-icon>
+        Pending Manager Approval
+      </ng-template>
+    </mat-step>
+
+    <mat-step [completed]="step3Completed">
+      <ng-template matStepLabel>
+        <mat-icon *ngIf="step3Completed" color="primary">check_circle</mat-icon>
+        Pending User Approval
+      </ng-template>
+    </mat-step>
+
+    <mat-step [completed]="step4Completed">
+      <ng-template matStepLabel>
+        <mat-icon *ngIf="step4Completed" color="primary">check_circle</mat-icon>
+        Goal Finished
+      </ng-template>
+    </mat-step>
+  </mat-horizontal-stepper>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button mat-raised-button (click)="filterGoals('all')">
+      All In Progress Goals ({{ allGoalsCount }})
+    </button>
+    <button mat-raised-button (click)="filterGoals('thisWeek')">
+      This Week ({{ thisWeekCount }})
+    </button>
+    <button mat-raised-button (click)="filterGoals('thisMonth')">
+      This Month ({{ thisMonthCount }})
+    </button>
+    <button mat-raised-button (click)="filterGoals('thisYear')">
+      This Year ({{ thisYearCount }})
+    </button>
+
+    <!-- Add Goal Button -->
+  <button mat-raised-button color="primary" class="add-goal-button" (click)="addGoal()">Add Goal</button>
+
+  </div>
+
+  <!-- Goals List -->
+  <mat-card *ngFor="let goal of filteredGoals" class="goal-card">
+    <div class="goal-info" (click)="navigateToGoalSpace(goal.id)">
+      <h1>{{ goal.name }}</h1>
+      <h3>{{ goal.description }}</h3>
+    </div>
+    <div class="goal-actions">
+      <button mat-icon-button color="primary" (click)="openCommentsDialog(goal.id)">
+        <mat-icon>comment</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" (click)="editGoal(goal)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteGoal(goal)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>

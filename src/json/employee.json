@@ -1,0 +1,42 @@
+{
+  "Employee": [],
+  "Goals": [
+    {
+      "id": 0,
+      "name": "Suva",
+      "description": "dsds",
+      "priority": "High",
+      "startDate": "2024-08-11T18:30:00.000Z",
+      "endDate": "2024-08-20T18:30:00.000Z",
+      "progress": 242
+    },
+    {
+      "id": 0,
+      "name": "wvw",
+      "description": "dddd",
+      "priority": "High",
+      "startDate": "2024-08-12T18:30:00.000Z",
+      "endDate": "2024-08-27T18:30:00.000Z",
+      "progress": 3
+    },
+    {
+      "id": 0,
+      "name": "mani",
+      "description": "nlsnd",
+      "priority": "Medium",
+      "startDate": "2024-08-13T18:30:00.000Z",
+      "endDate": "2024-08-05T18:30:00.000Z",
+      "progress": 0
+    },
+    {
+      "id": 0,
+      "name": "mani",
+      "description": "maniani",
+      "priority": "Medium",
+      "startDate": "2024-08-13T18:30:00.000Z",
+      "endDate": "2024-08-06T18:30:00.000Z",
+      "progress": 0
+    }
+  ],
+  "Leave": []
+}

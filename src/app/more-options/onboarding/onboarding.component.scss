@@ -1,0 +1,25 @@
+th{
+  background-color:#ebebeb;
+  padding: 10px;
+}
+
+.btn-filter{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.header{
+  height: 3rem;
+}
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+   color: #f1f1f1;
+  justify-content: flex-start;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  font-weight: 600;
+}

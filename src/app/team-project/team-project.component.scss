@@ -1,0 +1,277 @@
+/* Offcanvas Styles */
+.offcanvas {
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+  }
+  
+  /* Offcanvas header and footer */
+  .offcanvas-header {
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .offcanvas-footer {
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .card-body {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 1000px;
+    margin-top: -38px;
+    position: static;
+    
+  }
+  .card-body .btn{
+    background-color: white;
+    color: rgb(33, 9, 121);
+   
+  }
+
+ .card-header {
+background-color: #259862;
+  }
+  .form-check{
+    display: inline-flex;
+    margin-left: 20px;
+    padding-top: 5px;
+  }
+
+  .container {
+    margin-top: 4rem;
+  }
+  
+  .submitted-data {
+    margin-top: 1rem;
+  }
+  
+  .submitted-data .d-flex.flex-wrap p {
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .submitted-data p {
+    margin-bottom: 0.5rem;
+  }
+  .projectlist{
+    color:white;
+    background-color: #1e3c72;
+    height: 40px;
+    padding: 20px;
+  }
+ .pro{
+ margin-top: -304px;
+ }
+ .container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(151, 18, 18, 0.1);
+  height: 80px;
+}
+
+.projectlist {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #1e3c72;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.projectlist .pro {
+  margin: 0; /* Ensure no extra margin */
+  font-size: 1.2rem; /* Adjust font size if needed */
+}
+
+/* CSS */
+.project-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 20px 70px;
+  font-family: Arial, sans-serif;
+  
+  
+}
+
+.project-table thead {
+  background-color: #f4f4f4;
+}
+
+.project-table th, .project-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.project-table tr:hover {
+  background-color: #ede5e5;
+}
+
+.project-table th {
+  background-color: rgba(57, 113, 255, 0.878);
+  color: #fff;
+  font-weight: bold;
+  margin: 10px;
+
+  
+  
+}
+
+.project-table td select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.edit-btn {
+  background-color: #4CAF50; /* Green */
+}
+
+.delete-btn {
+  background-color: #f44336; /* Red */
+}
+
+.edit-btn:hover, .delete-btn:hover {
+  opacity: 0.8;
+}
+
+
+/* Dropdown Styling */
+select {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Action Buttons Layout */
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+/* Button Styles */
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:last-child {
+  background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Grid for Smaller Screens */
+/* Tablet view (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .projectlist .pro {
+    font-size: 20px;
+  }
+
+  .project-table th,
+  .project-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .offcanvas-body form .form-control {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .card-body{
+    padding: 10px;
+    margin-left: 400px;
+  }
+}
+
+/* Mobile view (max-width: 767px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
+  .projectlist .pro {
+    font-size: 18px;
+  }
+
+  .project-table {
+    font-size: 12px;
+  }
+
+  .project-table th,
+  .project-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Stack form fields vertically */
+  .offcanvas-body form .row {
+    flex-direction: column;
+  }
+
+  .offcanvas-body form .col-md-6 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* Ensure the offcanvas form adapts for small screens */
+  .offcanvas {
+    width: 100%;
+  }
+
+}
+.toast {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.toast show{
+ 
+  position: relative;
+  bottom: 231px;
+  right: -234px;
+  margin-left: 17px;
+  min-width: 250px;
+  
+}
+  

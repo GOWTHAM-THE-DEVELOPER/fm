@@ -1,0 +1,16 @@
+<div class="card" *ngIf="todayBirthdays.length; else noBirthdays">
+  <h3>Today's Birthdays</h3>
+  <div class="employee" *ngFor="let employee of todayBirthdays">
+    <img [src]="employee.image" alt="{{employee.employeeName}}" class="employee-image">
+    <div class="employee-info">
+      <p>Name: {{employee.employeeName}}</p>
+      <p>DOB: {{employee.dob | date:'longDate'}}</p>
+    </div>
+  </div>
+</div>
+<ng-template #noBirthdays>
+  <div class="card">
+    <h3>Birthday</h3>
+    <p>No birthdays today</p>
+  </div>
+</ng-template>

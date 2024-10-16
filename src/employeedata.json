@@ -1,0 +1,186 @@
+{  
+     "employeeId":"101",
+    "image": null,
+    "postAppliedFor": "Software Engineer",
+    "lastName": "kUMAR",
+    "firstName": "Anbu",
+    "middleName": "M",
+    "permanentHomeMailingAddress": {
+        "address": "123 Main St",
+        "pinCode": 12345,
+        "cell": 1234567890,
+        "telephoneCode": 1,
+        "telephone": 1234567
+    },
+    "dateofjoining":"25/09/2024",
+    "approval":"onboard",
+    "department":"java",
+    "email": "john.doe@example.com",
+    "birthDate": "1990-01-01",
+    "birthPlace": "City",
+    "gender": "Male",
+    "age": 30,
+    "maritalStatus": "Single",
+    "marriageDate": "null",
+    "nativeState": "State",
+    "religion": "Religion",
+    "nationality": "Nationality",
+    "stateOfDomicile": "State",
+    "category": "General",
+    "languagesKnown": [
+        {
+            "language": "English",
+            "speake": true,
+            "read": true,
+            "write": true
+        }
+    ],
+    "height": "180",
+    "weight": "75",
+    "bloodGroup": "O+",
+    "passportNo": "A1234567",
+    "passportIssueDate": "2020-01-01",
+    "validUptoDate": "2030-01-01",
+    "countryOfIssue": "Country",
+    "validVisaDetails": "Details",
+    "panNumber": "ABCDE1234F",
+    "familyDetails": [
+        {
+            "name": "Jane Doe",
+            "relationship": "Sister",
+            "qualification": "Graduate",
+            "organization": "XYZ Corp",
+            "designationAndPosition": "Senior Engineer"
+        }
+    ],
+    "emergencyContact": {
+        "name": "Jane Doe",
+        "relation": "Sister",
+        "address": "456 Another St",
+        "telephoneNo": "9876543210"
+    },
+    "healthData": {
+        "height": 180,
+        "weight": 75,
+        "bloodGroup": "O+",
+        "eyesightRight": 1.0,
+        "eyesightLeft": 1.0,
+        "physicalDisability": "None",
+        "identificationMarks": "None"
+    },
+    "education": [
+        {
+            "examinationPassed": "B.Tech",
+            "specialisation": "Computer Science",
+            "schoolCollegeInstitution": "ABC University",
+            "universityBoard": "State Board",
+            "courseCorres": "Regular",
+            "durationOfCourse": "4 years",
+            "monthYearOfPassing": "2012",
+            "gradeMarks": 80,
+            "distinctions": "First Class"
+        },
+        {
+            "examinationPassed": "sslc",
+            "specialisation": "Computer Science",
+            "schoolCollegeInstitution": "ABC University",
+            "universityBoard": "State Board",
+            "courseCorres": "Regular",
+            "durationOfCourse": "4 years",
+            "monthYearOfPassing": "2012",
+            "gradeMarks": 80,
+            "distinctions": "First Class"
+        }
+    ],
+    "membershipOfProfessionalInstitute": {
+        "nameOfInstitute": "Institute of Engineers",
+        "typeOfMembershipAndPositionHeld": "Member",
+        "period": "3 years",
+        "fromDate": "2015-01-01",
+        "toDate": "2018-01-01"
+    },
+    "trainingCertification": {
+        "nameOfTrainingCourse": "Java Certification",
+        "duration": "6 months",
+        "year": "2019",
+        "instituteOrganization": "ABC Training Institute",
+        "certificateAwarded": true
+    },
+    "extraCurricularActivity": {
+        "activity": "Basketball",
+        "institutionAssociationSocietyClub": "City Club",
+        "year": "2015",
+        "positionHeld": "Captain",
+        "prizesWon": "Intercity Championship"
+    },
+    "skillsSummary": {
+        "projectTitle": "E-commerce Website",
+        "role": "Lead Developer",
+        "teamSize": 5,
+        "duration": "6 months",
+        "languagePlatformOS": "Java, Spring Boot, MySQL"
+    },
+    "workExperience": {
+        "employerNameAndAddress": "XYZ Corp, 789 Industrial Rd",
+        "durationPeriod": "2 years",
+        "durationFrom": "2019-01-01",
+        "durationTo": "2021-01-01",
+        "lastPositionHeldDesignation": "Software Engineer",
+        "natureOfDuties": "Development",
+        "immediateSuperiorNameAndDesignation": "Mr. Smith, Manager",
+        "basicAtTimeOfJoining": 50000,
+        "fixedAtTimeOfJoining": 50000,
+        "variableAtTimeOfJoining": 10000,
+        "grossAtTimeOfJoining": 60000,
+        "lastDrawnFixed": 60000,
+        "lastDrawnVariable": 12000,
+        "lastDrawnGross": 72000,
+        "significantAchievementsAndsuitedForPosition": "Led project to successful completion"
+    },
+    "generalData": {
+        "criminalRecord": false,
+        "interviewedByTVM": false,
+        "dateYear": "2021",
+        "position": "Software Engineer",
+        "companyName": "XYZ Corp",
+        "relativesAcquaintanceInTVM": "None",
+        "name": "John Doe",
+        "relativesPosition": "N/A",
+        "howDidYouComeToKnow": "Online Job Portal",
+        "relationship": "N/A",
+        "companyTelephoneNos": "1234567890",
+        "howDidYouKnowPosition": "Online Job Portal",
+        "engagedInPersonalBusiness": false,
+        "natureOfBusiness": "N/A",
+        "hasContractBond": false,
+        "contractBondDetails": "N/A",
+        "whenCanYouJoin": "2021-02-01",
+        "superior1Name": "Mr. Smith",
+        "superior1Address": "789 Industrial Rd",
+        "superior1TelephoneNos": "1234567890",
+        "superior1Company": "XYZ Corp",
+        "superior1Position": "Manager",
+        "superior2Name": "Ms. Johnson",
+        "superior2Address": "789 Industrial Rd",
+        "superior2TelephoneNos": "1234567890",
+        "superior2Company": "XYZ Corp",
+        "superior2Position": "Senior Manager",
+        "superiorEmailId1": "smith@xyz.com",
+        "superiorEmailId2": "johnson@xyz.com"
+    },
+    "declaration": {
+        "isConnectedWithDirector": true,
+        "partnerOrRelativeOfDirector": true,
+        "directorOfTheCompany": true,
+        "place": "City",
+        "date": "2021-01-01",
+        "applicantSignature": "John Doe"
+    },
+    "presentHomeMailingAddress": {
+        "address": "123 Main St",
+        "pinCode": 12345,
+        "cell": 1234567890,
+        "telephoneCode": 1,
+        "telephone": 1234567
+    }
+}

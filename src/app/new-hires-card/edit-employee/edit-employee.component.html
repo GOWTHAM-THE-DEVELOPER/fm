@@ -1,0 +1,15 @@
+<div class="edit-form">
+  <h3>Edit Employee</h3>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="employeeName">Name:</label>
+      <input id="employeeName" formControlName="employeeName" />
+    </div>
+    <div>
+      <label for="joinDate">Join Date:</label>
+      <input id="joinDate" type="date" formControlName="joinDate" />
+    </div>
+    <button type="submit" [disabled]="employeeForm.invalid">Save</button>
+    <button type="button" (click)="onCancel()">Cancel</button>
+  </form>
+</div>

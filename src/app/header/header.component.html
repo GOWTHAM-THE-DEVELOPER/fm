@@ -1,0 +1,51 @@
+<nav class="breadcrumb">
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'general'">Profile > General</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'educational' ">Profile >  Educational</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'skillset'">Profile > Skillset</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'professional' ">Profile > Professional</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'details' ">Profile >  Details</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'personalDataForm'">Profile > Personal Data Form</span>
+</nav>
+
+  <nav class="navbar">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeNavItem === 'general'" (click)="selectTab('general')">
+        <i class="fa-solid fa-circle"></i> General
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeNavItem === 'educational'" (click)="selectTab('educational')">
+        <i class="fa-solid fa-circle"></i> Educational
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeNavItem === 'skillset'" (click)="selectTab('skillset')">
+        <i class="fa-solid fa-circle"></i> Skillset
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeNavItem === 'professional'" (click)="selectTab('professional')">
+        <i class="fa-solid fa-circle"></i> Professional
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeNavItem === 'details'" (click)="selectTab('details')">
+        <i class="fa-solid fa-circle"></i> Details
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="activeNavItem === 'personalDataForm'" (click)="selectTab('personalDataForm')">
+        <i class="fa-solid fa-circle"></i> Personal Data Form
+      </a>
+    </li>
+  </nav>
+  <hr>
+  <!-- Conditionally Render Components with Scrollable Containers -->
+  <div class="scrollable-content">
+    <app-general *ngIf="activeNavItem === 'general'"></app-general>
+    <app-educational *ngIf="activeNavItem === 'educational'"></app-educational>
+    <app-skillset *ngIf="activeNavItem === 'skillset'"></app-skillset>
+    <app-professional *ngIf="activeNavItem === 'professional'"></app-professional>
+    <app-details *ngIf="activeNavItem === 'details'"></app-details>
+    <app-personal-data-form *ngIf="activeNavItem === 'personalDataForm'"></app-personal-data-form>
+  </div>

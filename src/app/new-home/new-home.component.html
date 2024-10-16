@@ -1,0 +1,19 @@
+<!-- Breadcrumb -->
+<nav class="">
+  <div class="content rgb-animate">
+  <span class="" *ngIf="activeNavItem === 'my-space'">New Home > My Space > {{ activeSubNavItem }}</span>
+  <span class="" *ngIf="activeNavItem === 'teams-dashboard'">New Home > Teams > {{ activeSubNavItem }}</span>
+  <span class="" *ngIf="activeNavItem === 'organization'">New Home > Organization > {{ activeSubNavItem }}</span>
+</div>
+</nav>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-item" [class.active]="activeNavItem === 'my-space'" (click)="navigateToMySpace()">My Space</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'teams-dashboard'" (click)="teamsDashboardNavigate()">Teams</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'organization'" (click)="navigateToOrganization()">Organization</div>
+</nav>
+
+<app-home-my-data *ngIf="activeNavItem === 'my-space'" (subNavChange)="updateBreadcrumb($event)"></app-home-my-data>
+<app-teams-dashboard *ngIf="activeNavItem === 'teams-dashboard'" (subNavChange)="updateBreadcrumb($event)"></app-teams-dashboard>
+<app-organization *ngIf="activeNavItem === 'organization'" (subNavChange)="updateBreadcrumb($event)"></app-organization>

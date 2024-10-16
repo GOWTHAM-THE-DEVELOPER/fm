@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="nav-item" [class.active]="activeNavItem === 'leave-reportees'" (click)="navigateToLeaveReportees()">Reportees</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'on-leave'" (click)="navigateToOnLeave()">On Leave</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'approval-leave-request'" (click)="navigateToLeaveRequest()">Leave Request</div>
+</nav>
+
+<div class="main-content">
+  <app-leave-reportees *ngIf="activeNavItem === 'leave-reportees'"></app-leave-reportees>
+  <app-onleave *ngIf="activeNavItem === 'on-leave'"></app-onleave>
+  <app-approval-leave-request *ngIf="activeNavItem === 'approval-leave-request'"></app-approval-leave-request>
+</div>
+
+
+<!-- <router-outlet></router-outlet> -->

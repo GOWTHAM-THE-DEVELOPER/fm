@@ -1,0 +1,136 @@
+
+  h3 {
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    max-width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  input[type="number"],
+  input[type="date"],
+  input[type="file"],
+  input[type="checkbox"],
+  select {
+    width: 100%;
+    max-width: 56%;
+    height: 45px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+    margin-right: 20px;
+  }
+
+  section[formControlName="category"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  section[formControlName="category"] input {
+    margin: 0;
+  }
+
+  section[formControlName="category"] label {
+    margin-right: 15px;
+    margin-left: 5px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa;
+  }
+
+  button {
+    background-color: #1e3c72;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+
+  input:hover,
+  select:hover,
+  textarea:hover {
+    border-color: #007bff;
+  }
+
+  input,
+  select,
+  textarea {
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    form {
+      padding: 20px;
+    }
+
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    input[type="file"],
+    input[type="checkbox"],
+    select,
+    textarea {
+      font-size: 50px;
+
+    }
+
+
+
+    button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+
+  .personal-data-page{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+  }
+

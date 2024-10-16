@@ -1,0 +1,218 @@
+// Variables
+$font-family-primary: 'Courier New', Courier, monospace;
+$font-family-premium: 'YourPremiumFont', $font-family-primary;
+$color-primary: #007bff;
+$color-secondary: #0056b3;
+$color-background: #f9f9f9;
+$color-header-bg: #007bff;
+$color-header-text: #fff;
+$color-border: #ffffff;
+$color-box-shadow: rgba(3, 57, 252, 0.2);
+$color-box-shadow-dark: rgba(0, 0, 0, 0.2);
+$color-day-bg: #fff;
+$color-day-hover-bg: #e9f5ff;
+$color-day-number: #007bff;
+$font-size-small: small;
+$font-size-default: 14px;
+
+
+
+
+
+// Mixin for font-family
+@mixin font-family($family) {
+  font-family: $family;
+}
+
+// Global Styles
+
+
+.element.style{
+    margin-left: 70px;
+    margin-top: 139px;
+}
+
+
+h2 {
+  margin: 0;
+  font-size: 16px;
+  font-style: italic;
+  @include font-family($font-family-primary);
+  text-align: center;
+  margin-top: 10
+  0px;
+
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+  font-style: italic;
+  @include font-family($font-family-primary);
+}
+
+li {
+  margin: 1.5em 0;
+  padding: 0;
+  @include font-family($font-family-primary);
+}
+
+b { // Used for event dates/times
+  margin-right: 3px;
+  @include font-family($font-family-primary);
+}
+
+// Demo App Styles
+.demo-app {
+  display: flex;
+  min-height: 90%;
+  @include font-family($font-family-primary);
+  font-size: $font-size-default;
+  padding-left: 8rem;
+  margin-left: -95px;
+}
+
+  .demo-app-sidebar {
+    width: 300px;
+    line-height: 1.5;
+    background: #81d7f9;
+    border-right: 1px solid #a2dcf3;
+    @include font-family($font-family-primary);
+    background-color: darkcyan;
+    font-size: $font-size-small;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(3, 202, 252, 0.2);
+    background-image: url('./event.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0px solid #42b7e2;
+    margin-left: 30px;
+    margin-top: 10px;
+
+    .demo-app-sidebar-section {
+      @include font-family(cursive);
+      font-size: $font-size-small;
+      color: #ffffff;
+    }
+  }
+
+  .demo-app-main {
+    flex-grow: 1;
+    padding: 3em;
+    @include font-family($font-family-premium);
+    border: #50d8d7;
+
+    border-radius: 70px;
+    margin-top: 20px;
+    background-color: $color-background;
+    box-shadow: 0 4px 8px $color-box-shadow;
+    padding: 30px;
+
+    background-image: url('./smoky\ cal.jpg');
+    height: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+
+    .fc { // The calendar root
+      max-width: 1100px;
+      margin: 0 auto;
+      @include font-family($font-family-primary);
+      color: #000000;
+      .fc-daygrid-day {
+        border: 2px solid $color-primary;
+        border-radius: 5px;
+        background-color: $color-day-bg;
+        text-align: center;
+        vertical-align: middle;
+
+        font-weight: bold;
+        color: #000000;
+        padding: 10px;
+        @include font-family($font-family-premium);
+
+        .fc-daygrid-day-number {
+          display: inline-block;
+          font-size: 1.4em;
+          color: $color-day-number;
+          width: 100%;
+          color: #000000;
+          text-align: left;
+          text-size-adjust: 10px;
+          @include font-family($font-family-premium);
+        }
+
+        &:hover {
+          background-color: $color-day-hover-bg;
+          border-color: $color-secondary;
+          @include font-family($font-family-premium);
+          color: #000000;
+        }
+      }
+
+      .fc-header-toolbar {
+        background-color: $color-header-bg;
+        color: $color-header-text;
+        border-bottom: 2px solid $color-secondary;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+        text-align: center;
+        @include font-family($font-family-premium);
+        color: #000000;
+      }
+
+      .fc-button {
+        background-color: $color-primary;
+        color: $color-header-text;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1em;
+        @include font-family($font-family-premium);
+        color: #000000;
+
+        &:hover {
+          background-color: $color-secondary;
+          @include font-family($font-family-premium);
+          color: #000000;
+        }
+      }
+    }
+  }
+
+
+// Container Styles
+.container {
+  border-radius: 200px;
+  height: 60%;
+  width: 60%;
+  @include font-family($font-family-premium);
+  margin-left: 100px;
+}
+
+// Responsive Styles
+@media (max-width: 767px) {
+  .demo-app {
+    flex-direction: column; // Stack sidebar on top of main content
+  }
+}
+.fc.fc-daygrid-more-link {
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 2px;
+    position: relative;
+    white-space: nowrap;
+    z-index: 4;
+    color: #000000;
+}
+
+

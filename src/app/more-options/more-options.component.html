@@ -1,0 +1,13 @@
+<div class="popup-container">
+  <div class="popup-content">
+    <h3>More Options</h3>
+    <ul class="list-card">
+      <div class="card" *ngFor="let get of sidNave">
+        <li (click)="onboardingClick(get)">
+          <i [class]="get.icons"></i>
+          {{ get.name }}
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

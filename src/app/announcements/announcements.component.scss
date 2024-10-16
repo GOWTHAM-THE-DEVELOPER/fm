@@ -1,0 +1,500 @@
+/* Ensure the nav takes up full width */
+.top-nav {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #f8f9fa; /* Example background color */
+  border-bottom: 1px solid #dee2e6; /* Example border for separation */
+  position: relative; /* For positioning of search bar */
+}
+
+/* Search Bar Container */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: absolute; /* Position absolute to cover full width */
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+  z-index: 1000; /* Ensure it appears on top */
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.search-close-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+}
+
+/* General Button Styling */
+.btn-add-announcement,
+.btn-filter,
+.btn-search {
+  background-color: #007bff; /* Blue color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-add-announcement:hover,
+.btn-filter:hover,
+.btn-search:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Specific Button Styling */
+.btn-filter,
+.btn-search {
+  background-color: transparent;
+  color: #007bff; /* Blue color */
+  padding: 8px;
+  border: 1px solid #007bff;
+  border-radius: 50%; /* Circular button */
+}
+
+.btn-filter:hover,
+.btn-search:hover {
+  background-color: #e2e6ea; /* Light gray background on hover */
+}
+
+/* Hide Buttons When Search is Active */
+.search-bar-container.active {
+  display: block; /* Show search bar */
+}
+
+.button-group.hidden {
+  display: none; /* Hide button group */
+}
+
+/* Filter Modal */
+/* Filter Modal Styling */
+.filter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears on top */
+}
+
+.filter-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative; /* For positioning the close button */
+}
+
+/* Close Button Styling */
+.filter-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.filter-close-button:hover {
+  color: #ff0000; /* Change color on hover */
+}
+
+/* Form Labels and Inputs */
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+select,
+input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+select {
+  width: 100%; /* Full width for select elements */
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+/* Checkbox Group */
+.filter-checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.filter-checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.filter-checkbox-group input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and text */
+}
+
+/* Button Group */
+.filter-button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+.filter-apply-button,
+.filter-reset-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-apply-button {
+  background-color: #007bff; /* Primary color */
+  color: #fff;
+}
+
+.filter-apply-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.filter-reset-button {
+  background-color: #6c757d; /* Secondary color */
+  color: #fff;
+}
+
+.filter-reset-button:hover {
+  background-color: #5a6268; /* Darker shade on hover */
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto; /* Allows scrolling if content overflows */
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px; /* Adjust as needed */
+  width: 100%;
+  max-height: 90vh; /* Limits the height of the modal */
+  overflow-y: auto; /* Adds vertical scrollbar if content exceeds max height */
+}
+
+/* Modal Close Button */
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Input Styles */
+input[type="text"],
+textarea,
+select,
+input[type="file"] ,
+input[type="date"] {
+  width: 100%;
+  box-sizing: border-box; /* Includes padding and border in width */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Error Text */
+.error-text {
+  color: red;
+  font-size: 0.875em;
+}
+
+.modal-buttons {
+  text-align: right; /* Aligns buttons to the right */
+  margin-top: 20px; /* Optional: Adds space above the buttons */
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px; /* Space between buttons */
+}
+
+.modal-buttons .publish-button {
+  background-color: #007bff; /* Blue color */
+  color: white;
+}
+
+.modal-buttons .cancel-button {
+  background-color: #6c757d; /* Grey color */
+  color: white;
+}
+
+.modal-buttons .publish-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.modal-buttons .cancel-button:hover {
+  background-color: #5a6268; /* Darker grey on hover */
+}
+
+
+.filter-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.filter-popup-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.filter-close-button i {
+  margin: 0;
+}
+.filter-buttons {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px; /* Add margin to create gap */
+}
+
+.filter-buttons .apply-button {
+  background-color: #007bff; /* Blue color */
+  color: white;
+}
+
+.filter-buttons .reset-button {
+  background-color: #6c757d; /* Grey color */
+  color: white;
+}
+
+.filter-buttons .apply-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.filter-buttons .reset-button:hover {
+  background-color: #5a6268; /* Darker grey on hover */
+}
+
+.announcement-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.card-left {
+  flex: 1;
+}
+
+.card-right {
+  display: flex;
+  align-items: center;
+}
+
+.card-right button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.card-right i {
+  font-size: 1.2em; /* Adjust icon size as needed */
+}
+
+.like-button, .comment-button, .delete-button {
+  color: #333; /* Adjust button colors as needed */
+}
+
+.like-button:hover, .comment-button:hover, .delete-button:hover {
+  color: #007bff; /* Change color on hover */
+}
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it is on top of other elements */
+}
+
+/* Popup Content */
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Adjust max-width as needed */
+  position: relative;
+}
+
+/* Close Button */
+.popup-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Popup Actions */
+.popup-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the buttons */
+  margin-top: 20px;
+}
+
+/* Action Button Styles */
+.action-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size as needed */
+  color: black; /* Adjust color as needed */
+  padding: 5px 10px; /* Adjust padding as needed */
+}
+
+.action-button i {
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 18px; /* Adjust icon size as needed */
+}
+
+.action-button:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* Comment Section */
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.submit-comment-button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  font-size: 14px; /* Adjust font size as needed */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-comment-button:hover {
+  background: #0056b3; /* Change color on hover */
+}
+

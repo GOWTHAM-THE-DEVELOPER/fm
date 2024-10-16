@@ -1,0 +1,40 @@
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+     color: #f1f1f1;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    font-weight: 600;
+  }
+
+ /* Default tab styles */
+.nav-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white; /* Default color for tabs */
+    transition: background-color 0.3s ease;
+  }
+  
+  h5 {
+    font-weight: bold;
+  }
+  
+  ul {
+    margin-top: 15px;
+  }
+  
+  a {
+    display: block;
+    padding: 10px 0;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  
+  

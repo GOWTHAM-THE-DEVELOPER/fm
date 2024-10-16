@@ -1,0 +1,77 @@
+
+<div class="education-page">
+<h2 class="header" ><i class="fa-solid fa-graduation-cap "></i>Educational Details</h2>
+<div class="add">
+<h5><i class="fa-solid fa-plus btn"  (click)="addedClick()"></i>Add</h5>
+</div>
+  <form [formGroup]="educationGroup">
+    <div class="row mt-5">
+      <div class="col-md-5">
+        <div class="form-group div-spacing">
+          <label class="label-spacing" for="coursePursued">Course Pursued</label>
+          <select class="form-select"   formControlName="coursePursued"
+          [ngClass]="{'invalid-input': coursePursued?.invalid && (coursePursued?.dirty || coursePursued?.touched)}">
+          <option value="" disabled selected>Select a Designation</option>
+            <option>Option-1</option>
+            <option>Option-2</option>
+            <option>Option-3</option>
+          </select>
+          <div *ngIf="coursePursued?.invalid && (coursePursued?.dirty || coursePursued?.touched)" class="text-danger">
+            Course Pursued is required.
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-5">
+        <div class="form-group div-spacing">
+          <label class="label-spacing" for="institutionName">Name of the College/Institution</label>
+          <input   type="text" class="form-control" id="institutionName" placeholder="Name of the College/Institution" formControlName="institutionName"
+          [ngClass]="{'invalid-input': institutionName?.invalid && (institutionName?.dirty || institutionName?.touched)}">
+          <div *ngIf="institutionName?.invalid && (institutionName?.dirty || institutionName?.touched)" class="text-danger">
+            Institution Name is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="d-flex div-spacing">
+          <div class="me-3 flex-grow-1">
+            <div class="form-group ">
+              <label class="label-spacing" for="durationFrom">Duration</label>
+              <input type="text" class="form-control" id="durationFrom" placeholder="From" formControlName="durationFrom"
+              [ngClass]="{'invalid-input': durationFrom?.invalid && (durationFrom?.dirty || durationFrom?.touched)}">
+
+              <div *ngIf="durationFrom?.invalid && (durationFrom?.dirty || durationFrom?.touched)" class="text-danger">
+                Duration From is required.
+              </div>
+            </div>
+          </div>
+          <div class="flex-grow-1 ">
+            <div class="form-group  ">
+              <label for="durationTo" class="invisible label-spacing">To</label>
+              <input  type="text" class="form-control" id="durationTo" placeholder="To" formControlName="durationTo"
+              [ngClass]="{'invalid-input': durationTo?.invalid && (durationTo?.dirty || durationTo?.touched)}">
+              <div *ngIf="durationTo?.invalid && (durationTo?.dirty || durationTo?.touched)" class="text-danger">
+                Duration To is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-5">
+
+<div class="form-group div-spacing">
+  <label class="label-spacing" for="cgpaObtained">CGPA Obtained</label>
+  <input type="text" class="form-control" id="cgpaObtained" placeholder="CGPA obtained" formControlName="cgpaObtained"
+  [ngClass]="{'invalid-input': cgpaObtained?.invalid && (cgpaObtained?.dirty || cgpaObtained?.touched)}">
+  <div *ngIf="cgpaObtained?.invalid && (cgpaObtained?.dirty || cgpaObtained?.touched)" class="text-danger">
+    CGPA Obtained Name is required.
+  </div>
+</div>
+      </div>
+
+    </div>
+    <button class="btn next"  (click)="nextClick()" [disabled]="educationGroup.invalid">Next<i class="fa-solid fa-chevron-right"></i></button>
+  </form>
+</div>

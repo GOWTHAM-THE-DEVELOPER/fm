@@ -1,0 +1,225 @@
+<div class="proffession-page">
+  <div class="row">
+    <h2 class="col-md-5"><i class="fa-solid fa-mobile-retro"></i>Professional details</h2>
+    <div>
+    <h5 class="col-md-5 add"><i class="fa-solid fa-plus btn"></i>Add</h5>
+  </div>
+  </div>
+  <form [formGroup]="professionalFrom" >
+    <div class="form-group  col-md-10">
+      <label  class="label-spacing" for="firstName">Company name</label>
+      <input class="form-control" id="firstName" placeholder="Company name" formControlName="companyname"
+      [ngClass]="{'invalid-input': companyname?.invalid && (companyname?.dirty || companyname?.touched)}">
+      <div *ngIf="companyname?.invalid && (companyname?.dirty || companyname?.touched)" class="text-danger">
+        Company name is required.
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-5">
+        <div class="d-flex">
+          <div class="me-3 flex-grow-1">
+            <div class="form-group div-spacing">
+              <label class="label-spacing" for="durationFrom">Duration</label>
+              <input type="text" class="form-control" id="durationFrom" placeholder="From"  formControlName="durationfrom"
+              [ngClass]="{'invalid-input': durationfrom?.invalid && (durationfrom?.dirty || durationfrom?.touched)}">
+              <div *ngIf="durationfrom?.invalid && (durationfrom?.dirty || durationfrom?.touched)" class="text-danger">
+                Duration from is required.
+              </div>
+            </div>
+          </div>
+          <div class="flex-grow-1">
+            <div class="form-group div-spacing">
+              <label for="durationTo" class="invisible label-spacing">To</label>
+              <input type="text" class="form-control" id="durationTo" placeholder="To"  formControlName="durationto"
+              [ngClass]="{'invalid-input': durationto?.invalid && (durationto?.dirty || durationto?.touched)}">
+              <div *ngIf="durationto?.invalid && (durationto?.dirty || durationto?.touched)" class="text-danger">
+                Duration to is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-md-5">
+        <div class="form-group div-spacing">
+          <label  class="label-spacing" for="firstNameDuplicate">Role/Title</label>
+          <input class="form-control" id="firstNameDuplicate" placeholder="Designation"  formControlName="role"
+          [ngClass]="{'invalid-input': role?.invalid && (role?.dirty || role?.touched)}">
+          <div *ngIf="role?.invalid && (role?.dirty || role?.touched)" class="text-danger">
+            Role/Title is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group mt-3 div-spacing adjust" >
+          <label  class="label-spacing" for="employeeReference">Employee Reference (if any)</label>
+          <input class="form-control" id="employeeReference" placeholder="Employee Reference"  formControlName="empreference"
+          [ngClass]="{'invalid-input': empreference?.invalid && (empreference?.dirty || empreference?.touched)}">
+          <div *ngIf="empreference?.invalid && (empreference?.dirty || empreference?.touched)" class="text-danger">
+             required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group div-spacing">
+          <label  class="label-spacing" for="firstNameDuplicate">Total years of experirnce</label>
+          <input class="form-control" id="firstNameDuplicate" placeholder="Total years of experirnce"  formControlName="tyoe"
+          [ngClass]="{'invalid-input': tyoe?.invalid && (tyoe?.dirty || tyoe?.touched)}">
+          <div *ngIf="tyoe?.invalid && (tyoe?.dirty || tyoe?.touched)" class="text-danger">
+            Experirnce is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+
+        <h2>Other details</h2>
+        <div class="form-group div-spacing">
+          <label class="label-spacing">Additional qualification/Achivements</label>
+          <textarea class="form-control"  formControlName="achivements"
+          [ngClass]="{'invalid-input': achivements?.invalid && (achivements?.dirty || achivements?.touched)}"></textarea>
+          <div *ngIf="achivements?.invalid && (achivements?.dirty || achivements?.touched)" class="text-danger">
+            qualification/Achivements is required.
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+
+   <div class="row mt-5">
+    <div class="col-md-6">
+
+      <div class="form-check">
+        <label class="form-check-label label-spacing" for="physicalyes">1. Are you physically challenged ?</label>
+        <div class="d-flex">
+          <div class="form-check me-2 radio-yes">
+            <input class="form-check-input" type="radio" id="physicalyes" name="physical" value="yes" formControlName="physical">
+            <label class="form-check-label label-spacing" for="physicalyes">Yes</label>
+          </div>
+          <div class="form-check radio-no">
+            <input class="form-check-input" type="radio" id="physicalNo" name="physical" value="no" formControlName="physical">
+            <label class="form-check-label label-spacing" for="physicalNo">No</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-check">
+        <label class="form-check-label label-spacing" for="arrestyes">2. Have you ever been arrested ?</label>
+        <div class="d-flex">
+          <div class="form-check me-2 radio-yes">
+            <input class="form-check-input" type="radio" id="arrestyes" name="arrest" value="yes"  formControlName="arrest" checked>
+
+            <label class="form-check-label label-spacing" for="arrestyes">Yes</label>
+          </div>
+          <div class="form-check radio-no">
+            <input class="form-check-input" type="radio" id="arrestNo" name="arrest"  formControlName="arrest" value="no">
+
+            <label class="form-check-label label-spacing" for="arrestNo">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label label-spacing" for="employmentyes">3. Have you ever been considered for employment in OFS ?</label>
+        <div class="d-flex">
+          <div class="form-check me-2 radio-yes">
+            <input class="form-check-input" type="radio" id="employmentyes" name="employment"  formControlName="employment" value="yes" checked>
+
+            <label class="form-check-label label-spacing" for="employmentyes">Yes</label>
+          </div>
+          <div class="form-check radio-no">
+            <input class="form-check-input" type="radio" id="employmentNo" name="employment"  formControlName="employment" value="no">
+            <label class="form-check-label label-spacing" for="employmentNo">No</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 serious">
+      <div class="form-check">
+        <label class="form-check-label label-spacing" for="surgicalyes">4. Have you suffered from any serious illness or surgical ?</label>
+        <div class="d-flex">
+          <div class="form-check me-2 radio-yes">
+            <input class="form-check-input" type="radio" id="surgicalyes" name="surgical" value="yes"  formControlName="surgical" checked>
+            <label class="form-check-label label-spacing" for="surgicalyes">Yes</label>
+          </div>
+          <div class="form-check radio-no">
+            <input class="form-check-input" type="radio" id="surgicalNo" name="surgical"  formControlName="surgical" value="no">
+            <label class="form-check-label label-spacing" for="surgicalNo">No</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn d-save" (click)="professionalPostClick()"  [disabled]="professionalFrom.invalid">Details Save</button>
+    </div>
+  </form>
+<hr>
+
+<label>References(list any two prefessional reference)</label>
+<button class="btn  table-btn" (click)="addClick()">Add</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Professional Relationship</th>
+      <th>Contact No</th>
+      <th>Business/Occupation</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people; let i = index">
+      <td>
+        <span *ngIf="!person.isEdit">{{ person.fullName }}</span>
+        <input *ngIf="person.isEdit" [(ngModel)]="person.fullName" />
+      </td>
+      <td>
+        <span *ngIf="!person.isEdit">{{ person.professionalRelationship }}</span>
+        <input *ngIf="person.isEdit" [(ngModel)]="person.professionalRelationship" />
+      </td>
+      <td>
+        <span *ngIf="!person.isEdit">{{ person.contactNo }}</span>
+        <input *ngIf="person.isEdit" [(ngModel)]="person.contactNo" />
+      </td>
+      <td>
+        <span *ngIf="!person.isEdit">{{ person.business }}</span>
+        <input *ngIf="person.isEdit" [(ngModel)]="person.business" />
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-success me-2"
+          *ngIf="person.isEdit"
+          (click)="saveChanges(i)">
+          save
+        </button>
+        <button
+          type="button"
+          class="btn btn-success me-2"
+          *ngIf="!person.isEdit"
+          (click)="toggleEditMode(i)">
+          <i class="fa-regular fa-floppy-disk"></i>
+
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="deleteRow(i)">
+          <i class="fa-solid fa-ban"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div>
+
+  <input type="checkbox" checked> I hereby certify that statement I made above is true, complete and correct to the best of my knowladge and belief.
+</div>
+
+  <button class="btn submit">Submit</button>
+</div>

@@ -1,0 +1,41 @@
+<div class="body">
+  <div class="container">
+    <div class="header">
+      <div class="actions">
+        <button><i class="fas fa-calendar-alt"></i></button>
+        <button (click)="toggleViewMode()">
+          <!-- Use a ternary operator inside Angular bindings for toggling icons -->
+          <i class="fas" [ngClass]="viewMode === 'list' ? 'fa-th' : 'fa-list'"></i>
+        </button>
+        <button (click)="applyLeave()">Apply Leave</button>
+      </div>
+    </div>
+
+    <div class="leave-summary" *ngIf="viewMode === 'list'">
+      <div class="card" *ngFor="let leave of leaves">
+        <i [class]="leave.icon" [style.color]="leave.color"></i>
+        <h3>{{ leave.typeLeave }}</h3>
+        <p>Available: {{ leave.available }}</p>
+        <p>Booked: {{ leave.booked }} <i class="fas fa-info-circle"></i></p>
+      </div>
+    </div>
+    
+    
+
+    <!-- Upcoming Leave Section -->
+    <div class="upcoming-leave">
+      <div class="dropdown">
+        <select>
+          <option>Upcoming Leave & Holidays</option>
+        </select>
+      </div>
+
+      <div class="leave-item" *ngFor="let upcomingLeave of upcomingLeaves">
+        <div class="date">{{ upcomingLeave.date }}</div>
+        <div class="type">
+          <span [class]="upcomingLeave.type"></span> {{ upcomingLeave.type }} • {{ upcomingLeave.days }} day(s)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

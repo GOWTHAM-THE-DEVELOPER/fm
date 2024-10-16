@@ -1,0 +1,23 @@
+<div class="employee-tree-container">
+    <!-- CEO and Teams List -->
+    <div class="employee-list">
+      <div class="employee-card" *ngFor="let employee of employees" (click)="selectEmployee(employee)">
+        {{ employee.label }}
+      </div>
+    </div>
+  
+    <!-- Team and Members Cards -->
+    <div class="employee-cards" *ngIf="selectedEmployee">
+      <div class="team-container" *ngFor="let team of selectedEmployee.children" (click)="selectTeam(team)">
+        <div class="team-card">
+          {{ team.label }}
+        </div>
+        <div class="team-members-container" *ngIf="selectedTeam === team">
+          <div class="member-card" *ngFor="let member of team.children">
+            {{ member.label }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

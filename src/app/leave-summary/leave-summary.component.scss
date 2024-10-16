@@ -1,0 +1,190 @@
+.body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #3e8e41;
+}
+
+
+
+.leave-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.leave-summary-header .year-display {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.leave-summary-header button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.leave-summary-header button i {
+  margin-right: 5px;
+}
+
+/* Leave summary styles */
+
+.leave-summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.leave-summary .card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 15%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.leave-summary .card i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.leave-summary .card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.leave-summary .card p {
+  margin: 5px 0;
+}
+
+.leave-summary .card .available {
+  color: green;
+  font-weight: bold;
+}
+
+.leave-summary .card .booked {
+  color: red;
+  font-weight: bold;
+}
+
+.leave-summary .card .fa-info-circle {
+  margin-left: 5px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+/* Apply leave button styles */
+
+.apply-leave-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.apply-leave-btn:hover {
+  background-color: #218838;
+}
+
+/* Upcoming leave styles */
+
+.upcoming-leave {
+  padding: 20px;
+}
+
+.dropdown {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.leave-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.leave-item .date {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.leave-item .type {
+  font-size: 16px;
+  color: #666;
+}
+
+.leave-item .type span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+/* leave-summary.component.scss */
+.leave-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.card-grid {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

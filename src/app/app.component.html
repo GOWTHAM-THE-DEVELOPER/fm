@@ -1,0 +1,68 @@
+<div class="app-container">
+  <div class="sidebar" [ngClass]="{ expanded: isExpanded }">
+    <div class="header">
+      <img src="../assets/images/zoho_icon.png" />
+    </div>
+    <div class="content">
+      <div class="link" (click)="newHomeNavigate()" [ngClass]="{'active': activeLink === 'home'}">
+          <i class="fa-solid fa-house"></i>
+          <div class="title-home">Home</div>
+      </div>
+    </div>
+    <div class="link" (click)="headerNavigate()" [ngClass]="{'active': activeLink === 'profile'}">
+      <div class="content">
+        <i class="fa-solid fa-id-card"></i>
+        <div class="title-profile">Profile</div>
+      </div>
+    </div>
+    <div class="link with-children">
+      <!-- New Leave Tracking Link -->
+      <div class="link" (click)="leaveTrackingNavigate()" [ngClass]="{'active': activeLink === 'leave'}">
+        <div class="content">
+          <i class="fa-solid fa-umbrella-beach fa-flip-horizontal"></i>
+          <div class="title-leave">Leave Tracking</div>
+        </div>
+      </div>
+      <!--More Options-->
+      <div class="link" (click)="goalsNavigate()" [ngClass]="{'active': activeLink === 'goals'}">
+        <div class="content">
+          <i [class]="icons"></i>
+          <div class="title">{{ perfomance }}</div>
+        </div>
+      </div>
+      <div class="link" (click)="togglePopup()" *ngIf="showPopup" [ngClass]="{'active': activeLink === 'more'}">
+        <div class="content">
+          <i class="fa-solid fa-ellipsis"></i>
+          <div class="title-home">More</div>
+        </div>
+      </div>
+      <div class="link" (click)="taskNavigate()" *ngIf="!showPopup" [ngClass]="{'active': activeLink === 'task'}">
+        <div class="content">
+          <i class="fa-solid fa-list-check"></i>
+          <div class="title-home">Task</div>
+        </div>
+      </div>
+      <div class="link" (click)="OnboardingNavigate()" *ngIf="!showPopup" [ngClass]="{'active': activeLink === 'onboarding'}">
+        <div class="content">
+          <i class="fa-regular fa-handshake"></i>
+          <div class="title-home">Onboarding</div>
+        </div>
+      </div>
+      <div class="link" (click)="operationNavigate()" *ngIf="!showPopup" [ngClass]="{'active': activeLink === 'operation'}">
+        <div class="content">
+          <i class="fa-brands fa-ubuntu"></i>
+          <div class="title-home">Operation</div>
+        </div>
+      </div>
+      <div class="link" (click)="reportsNavigate()" *ngIf="!showPopup" [ngClass]="{'active': activeLink === 'reports'}">
+        <div class="content">
+          <i class="fa-solid fa-chart-pie"></i>
+          <div class="title-home">Reports</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content" style="width: 100%">
+    <router-outlet></router-outlet>
+  </div>
+</div>

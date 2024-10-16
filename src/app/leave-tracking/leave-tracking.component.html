@@ -1,0 +1,16 @@
+<nav class="breadcrumb">
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'mydata' && activeSubNavItem === 'leave-summary'">Leave Tracking > My Data > Leave Summary</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'mydata' && activeSubNavItem === 'leave-balance'">Leave Tracking > My Data > Leave Balance</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'mydata' && activeSubNavItem === 'leave-requests'">Leave Tracking > My Data > Leave Request</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'teams' && activeSubNavItem === 'leave-reportees'">Leave Tracking > Teams > Reportees</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'teams' && activeSubNavItem === 'on-leave'">Leave Tracking > Teams > On Leave</span>
+  <span class="breadcrumb-item" *ngIf="activeNavItem === 'teams' && activeSubNavItem === 'approval-leave-request'">Leave Tracking > Teams > Leave Request</span>
+</nav>
+
+<nav class="navbar">
+  <div class="nav-item" [class.active]="activeNavItem === 'mydata'" (click)="navigateToMyData()">My Data</div>
+  <div class="nav-item" [class.active]="activeNavItem === 'teams'" (click)="navigateToTeams()">Teams</div>
+</nav>
+
+<app-my-data *ngIf="activeNavItem === 'mydata'" (subNavChange)="updateSubBreadcrumb($event)"></app-my-data>
+<app-teams *ngIf="activeNavItem === 'teams'" (subNavChange)="updateSubBreadcrumb($event)"></app-teams>

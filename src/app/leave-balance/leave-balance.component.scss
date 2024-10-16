@@ -1,0 +1,128 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    overflow: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.leave-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.leave-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.leave-icon i {
+    font-size: 24px;
+    color: #fff;
+}
+
+.leave-details {
+    flex-grow: 1;
+}
+
+.leave-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.leave-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    /* adjust the height to your needs */
+}
+
+.leave-status p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.available {
+    color: green;
+}
+
+.booked {
+    color: #333;
+}
+
+.negative {
+    color: red;
+}
+
+.casual {
+    background-color: #a3c9ff;
+}
+
+.earned {
+    background-color: #d4e157;
+}
+
+.leave-without-pay {
+    background-color: #ff8a80;
+}
+
+.paternity {
+    background-color: #ffcc80;
+}
+
+.sabbatical {
+    background-color: #fff176;
+}
+
+.sick {
+    background-color: #ce93d8;
+}
+
+.apply-leave-btn {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.leave-card:hover .apply-leave-btn {
+    display: block;
+}
+
+.leave-card {
+    position: relative;
+}

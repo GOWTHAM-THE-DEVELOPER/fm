@@ -1,0 +1,36 @@
+<body>
+    <div>
+    
+        <div class='demo-app'>
+        
+            <div class='demo-app-sidebar'>
+          
+          
+          
+              <div class='demo-app-sidebar-section'><br>
+                <h2 style="color: black ; font: bold; text-shadow: 1px 1px 3px #403f3f; text-decoration: dotted;"><b>Leave Days</b>({{currentEvents().length}})</h2>
+                <ul><br>
+                  <li *ngFor='let event of currentEvents()'>
+                    <b style="color: black">{{event.startStr}}</b>
+                    <i style="color: black; text-shadow: 3px 3px 5px #ffffff;">({{event.title}})</i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="container" style="color: rgb(255, 255, 255); ">
+            <div class='demo-app-main' style="color: rgb(255, 255, 255); ">
+              <full-calendar *ngIf='calendarVisible()' [options]='calendarOptions()' style="color: rgb(0, 0, 0);">
+                <ng-template #eventContent let-arg  >
+                  <b >{{ arg.timeText }}</b>
+                  <i style=" 
+                  text-shadow: 3px 3px 5px #000000;
+                  font: bolder; font-size: larger;">{{ arg.event.title }}</i>
+                </ng-template>
+              </full-calendar>
+            </div>
+          
+          </div>
+          </div>
+          
+        </div>
+</body>

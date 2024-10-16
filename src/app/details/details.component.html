@@ -1,0 +1,47 @@
+
+    <div class="detail-page " >
+        <div class="btn-group mb-3">
+          <button class="btn-1 btn" (click)="deleteSelectedRows()">Delete</button>
+          <button class="btn-2 btn" (click)="filterWorkers('yes')">Active Employee</button>
+          <button class="btn-1 btn" (click)="filterWorkers('no')">Inactive Employee</button>
+          <button class="btn-2 btn" (click)="filterWorkers('all')">All Employee</button>
+        </div>
+
+        <div class="table-container">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>FirstName</th>
+                <th>SecondName</th>
+                <th>MailId</th>
+                <th>OfficialMailId</th>
+                <th>Mobile</th>
+                <th>Onboarding Status</th>
+                <th>Department</th>
+                <th>Active</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let worker of workers; let i = index" [hidden]="worker.hidden">
+                <td><input type="checkbox" (change)="toggleSelection($event, worker)"></td>
+                <td>{{ worker.firstName }}</td>
+                <td>{{ worker.secondName }}</td>
+                <td>{{ worker.mailId }}</td>
+                <td>{{ worker.officialMailId }}</td>
+                <td>{{ worker.mobile }}</td>
+                <td>{{ worker.onboardingStatus }}</td>
+                <td>{{ worker.department }}</td>
+                <td>{{ worker.active }}</td>
+                <td><button class="btn btn-primary">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+
+
+

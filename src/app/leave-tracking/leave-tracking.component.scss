@@ -1,0 +1,79 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #2e3b61;
+    gap: 2rem;
+    padding: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+
+  }
+
+  .nav-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #f9f9f9;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 10px;
+  }
+
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0088ff;
+    transition: width 0.3s;
+  }
+
+
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+
+  .nav-item.active {
+    background-color: #f1f1f1;
+    color: #1e3c72;
+  }
+
+  .nav-item.active::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+
+    .nav-item {
+      padding: 0.5rem 1rem;
+      width: 100%;
+    }
+  }
+
+  .breadcrumb {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+  }
+
+  .breadcrumb-item {
+    cursor: pointer;
+    color: #f9f9f9;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+  }

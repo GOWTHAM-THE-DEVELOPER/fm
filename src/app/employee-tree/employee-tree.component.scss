@@ -1,0 +1,88 @@
+:host {
+  display: block;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.employee-tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+.employee-list {
+  margin-bottom: 20px;
+}
+
+.employee-card {
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #e9f7ff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.employee-card:hover {
+  background-color: #cce5ff;
+}
+
+.employee-cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.team-container {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.team-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 2px solid #ccc;
+}
+
+.team-card {
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: 1px solid #28a745;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #e6ffed;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.team-card:hover {
+  background-color: #d4ffda;
+}
+
+.team-members-container {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.member-card {
+  padding: 8px 12px;
+  margin: 5px 0;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  font-weight: normal;
+}
+
+.selected {
+  background-color: #b8daff;
+  border-color: #0056b3;
+}

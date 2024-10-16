@@ -1,0 +1,117 @@
+<div class="skill-page">
+  <div class="mt-4">
+    <h2 class="label-spacing">
+      <i class="fa-solid fa-book"></i>Skillset details
+      <button class="btn table-btn" (click)="addSkill()">Add</button>
+    </h2>
+
+    <div class="table-page">
+      <table class="table table-striped">
+        <thead>
+    <tr>
+            <th>Skills<span>*</span></th>
+            <th>Years Of Experience<span>*</span></th>
+               <th>Rating<span>*</span></th>
+            <th>Action</th>
+          </tr>
+   </thead>
+        <tbody>
+          <tr *ngFor="let skill of skills; let i = index">
+            <td>{{ skill.name }}</td>
+            <td>{{ skill.yof }}years</td>
+            <td>{{ skill.rating }}*</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-success me-2"
+                (click)="editSkill(skill, i)"
+              >
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="deleteRow(i)"
+              >
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div
+        *ngIf="showPopup"
+        class="modal fade show d-block"
+        tabindex="-1"
+        [@popupAnimation]
+      >
+        <div class="modal-dialog ">
+          <div class="modal-content shadow">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Skill</h5>
+              <button
+                type="button"
+                class="btn-close"
+                (click)="onClose()"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="skillForm" (ngSubmit)="onSave()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Skill Name</label>
+                  <input
+                    id="name"
+                    formControlName="name"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="yof" class="form-label"
+                    >Years of Experience</label
+                  >
+                  <input
+                    id="yof"
+                    formControlName="yof"
+                    type="number"
+                    class="form-control"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="rating" class="form-label">Rating</label>
+                  <input
+                    id="rating"
+                    formControlName="rating"
+                    type="number"
+                    class="form-control"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    [disabled]="skillForm.invalid"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="onClose()">
+                    Close
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button class="btn btn-primary">Add Language</button> -->
+  </div>
+  <button class="btn next" (click)="nextClick()"  [disabled]="true">
+    Next<i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>

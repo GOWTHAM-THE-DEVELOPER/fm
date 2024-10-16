@@ -1,0 +1,65 @@
+
+// Base container styling
+.add-goal-container {
+  max-width: 600px;  // Adjust the max-width for responsiveness
+  margin: 0 auto;    // Center the container horizontally
+  padding: 20px;     // Add some padding around the container
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Add a subtle shadow
+  border-radius: 8px;  // Rounded corners
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    mat-form-field {
+      margin-bottom: 20px;  // Add space between form fields
+
+      mat-error {
+        font-size: 0.875rem;  // Slightly smaller font for error messages
+      }
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;  // Space buttons evenly
+      margin-top: 20px;
+
+      button {
+        width: 48%;  // Make buttons equal width
+      }
+    }
+  }
+}
+
+// Style for form fields
+mat-form-field {
+  display: block;
+}
+
+// Style for the submit button
+button[type="submit"] {
+  background-color: #007bff;  // Bootstrap primary color
+  color: white;
+  &:hover {
+    background-color: #0056b3;  // Darker shade on hover
+  }
+}
+
+// Style for the cancel button
+button[type="button"] {
+  background-color: #dc3545;  // Bootstrap danger color
+  color: white;
+  &:hover {
+    background-color: #c82333;  // Darker shade on hover
+  }
+}
+
+.mt-3 {
+  max-height: 500px;
+  overflow-y:scroll;
+}

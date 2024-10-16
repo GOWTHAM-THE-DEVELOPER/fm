@@ -1,0 +1,116 @@
+// .card {
+//     padding: 16px;
+//     border: 1px solid #ddd;
+//     border-radius: 8px;
+//     background-color: #fff;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//     transition: all 0.3s ease;
+//   }
+  
+//   .card:hover {
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//   }
+  
+//   .employee {
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 16px;
+//     border: 1px solid #eee;
+//     border-radius: 8px;
+//     padding: 8px;
+//     background-color: #f9f9f9;
+//     transition: transform 0.3s ease;
+//   }
+  
+//   .employee:hover {
+//     transform: scale(1.05);
+//   }
+  
+//   .employee-image {
+//     width: 60px;
+//     height: 60px;
+//     border-radius: 50%;
+//     margin-right: 16px;
+//   }
+  
+//   .employee-info {
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   h3 {
+//     margin-top: 0;
+//   }
+  
+
+.card {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
+  }
+  
+  h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .employee {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .employee-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 16px;
+    object-fit: cover;
+  }
+  
+  .employee-info {
+    p {
+      margin: 4px 0;
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+  
+  .no-birthdays {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      padding: 12px;
+    }
+  
+    h3 {
+      font-size: 1.25rem;
+    }
+  
+    .employee {
+      padding: 8px 0;
+    }
+  
+    .employee-image {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .employee-info {
+      p {
+        font-size: 0.875rem;
+      }
+    }
+  }
+  

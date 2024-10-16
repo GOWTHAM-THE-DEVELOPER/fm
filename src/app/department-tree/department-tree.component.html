@@ -1,0 +1,20 @@
+<div class="department-tree-container">
+    <ul>
+      <!-- Department Nodes -->
+      <li *ngFor="let department of employees[0].children">
+        <div class="department-card" (click)="selectDepartment(department)">
+          {{ department.label }}
+        </div>
+  
+        <!-- Team Members Nodes -->
+        <ul *ngIf="selectedDepartment === department">
+          <li *ngFor="let member of department.children">
+            <div class="member-card">
+              {{ member.label }}
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
